@@ -1,0 +1,187 @@
+{
+    "className" : "Vampire",
+    "tagLine" : "Vampires are undead creatures that feed on the blood of the living, known for their immortality, charm, and endless hunger.",
+    "classTable" : {
+        "header" : {
+            "rows" : [
+                {
+                    "cells" : [
+                        {  "content" : ""},
+                        {  "content" : "Proficiency",       "CSSProperties" : "text-align: center; width: 1%; min-width: 70px; white-space: nowrap"},
+                        {  "content" : ""},
+                        {  "content" : "Sanguine",          "CSSProperties" : "text-align: center; width: 1%; min-width: 50px; white-space: nowrap"}
+                    ]
+                },
+                {
+                    "cells" : [
+                        {  "content" : "Level",             "CSSProperties" : "text-align: center; width: 1%; min-width: 40px; white-space: nowrap"},
+                        {  "content" : "Bonus",             "CSSProperties" : "text-align: center; width: 1%; min-width: 40px; white-space: nowrap"},
+                        {  "content" : "Class Features",    "CSSProperties" : "text-align: left; width: auto"},
+                        {  "content" : "Mutations",         "CSSProperties" : "text-align: center; width: 1%; min-width: 50px; white-space: nowrap"}
+                    ]
+                }
+            ]
+        },
+        "rows" : [
+            [
+                { "content" : { "type" : "text",        "content" : "1" } },
+                { "content" : { "type" : "text",        "content" : "+2" } },
+                { "content" : { "type" : "features",    "content" : [
+                    { "name" : "Feed",                  "id" : "vampire-feed" },
+                    { "name" : "Strength of Blood",     "id" : "vampire-strength-of-blood" },
+                    { "name" : "Vampiric Curse",        "id" : "vampire-vampiric-curse" }
+                ] } },
+                { "content" : { "type" : "text", "content" : "—" } }
+            ],
+            [
+                { "content" : { "type" : "text",        "content" : "2" } },
+                { "content" : { "type" : "text",        "content" : "+2" } },
+                { "content" : { "type" : "features",    "content" : [
+                    { "name" : "Blood Sacrifice",       "id" : "vampire-blood-sacrifice" },
+                    { "name" : "Sanguine Mutations",    "id" : "vampire-sanguine-mutations" }
+                ] } },
+                { "content" : { "type" : "text", "content" : "2" } }
+            ],
+            [
+                { "content" : { "type" : "text",        "content" : "3" } },
+                { "content" : { "type" : "text",        "content" : "+2" } },
+                { "content" : { "type" : "features",    "content" : [
+                    { "name" : "Vampire Subclass",      "id" : "vampire-subclass" },
+                    { "name" : "Mesmerize",             "id" : "vampire-mesmerize" }
+                ] } },
+                { "content" : { "type" : "text", "content" : "2" } }
+            ],
+            [
+                { "content" : { "type" : "text",        "content" : "4" } },
+                { "content" : { "type" : "text",        "content" : "+2" } },
+                { "content" : { "type" : "features",    "content" : [
+                    { "name" : "Ability Score Improvement", "id" : "vampire-asi" }
+                ] } },
+                { "content" : { "type" : "text",        "content" : "3" } }
+            ],
+            [
+                { "content" : { "type" : "text",        "content" : "5" } },
+                { "content" : { "type" : "text",        "content" : "+3" } },
+                { "content" : { "type" : "features",    "content" : [
+                    { "name" : "Extra Attack",          "id" : "vampire-extra-attack" },
+                    { "name" : "Vampiric Senses",       "id" : "vampire-vampiric-senses" }
+                ] } },
+                { "content" : { "type" : "text",        "content" : "3" } }
+            ],
+            [
+                { "content" : { "type" : "text",        "content" : "6" } },
+                { "content" : { "type" : "text",        "content" : "+3" } },
+                { "content" : { "type" : "features",    "content" : [
+                    { "name" : "Vicious Strikes",       "id" : "vampire-vicious-strikes" }
+                ] } },
+                { "content" : { "type" : "text",        "content" : "4" } }
+            ],
+            [
+                { "content" : { "type" : "text",        "content" : "7" } },
+                { "content" : { "type" : "text",        "content" : "+3" } },
+                { "content" : { "type" : "features",    "content" : [
+                    { "name" : "Subclass Feature",      "id" : "vampire-subclass" }
+                ] } },
+                { "content" : { "type" : "text",        "content" : "4" } }
+            ],
+            [
+                { "content" : { "type" : "text",        "content" : "8" } },
+                { "content" : { "type" : "text",        "content" : "+3" } },
+                { "content" : { "type" : "features",    "content" : [
+                    { "name" : "Ability Score Improvement", "id" : "vampire-asi" }
+                ] } },
+                { "content" : { "type" : "text",        "content" : "4" } }
+            ],
+            [
+                { "content" : { "type" : "text",        "content" : "9" } },
+                { "content" : { "type" : "text",        "content" : "+4" } },
+                { "content" : { "type" : "text",        "content" : "—" } },
+                { "content" : { "type" : "text",        "content" : "5" } }
+            ],
+            [
+                { "content" : { "type" : "text",        "content" : "10" } },
+                { "content" : { "type" : "text",        "content" : "+4" } },
+                { "content" : { "type" : "features",    "content" : [
+                    { "name" : "Siphon Life",           "id" : "vampire-siphon-life" }
+                ] } },
+                { "content" : { "type" : "text",        "content" : "5" } }
+            ],
+            [
+                { "content" : { "type" : "text",        "content" : "11" } },
+                { "content" : { "type" : "text",        "content" : "+4" } },
+                { "content" : { "type" : "features",    "content" : [
+                    { "name" : "Subclass Feature",      "id" : "vampire-subclass" }
+                ] } },
+                { "content" : { "type" : "text",        "content" : "5" } }
+            ],
+            [
+                { "content" : { "type" : "text",        "content" : "12" } },
+                { "content" : { "type" : "text",        "content" : "+4" } },
+                { "content" : { "type" : "features",    "content" : [
+                    { "name" : "Ability Score Improvement",  "id":  "vampire-asi"}
+                ] } },
+                { "content" : { "type" : "text",        "content" : "6" } }
+            ],
+            [
+                { "content" : { "type" : "text",        "content" : "13" } },
+                { "content" : { "type" : "text",        "content" : "+5" } },
+                { "content" : { "type" : "features",    "content" : [
+                    { "name" : "Ravenous Strikes",      "id":  "vampire-ravenous-strikes"}
+                ] } },
+                { "content" : { "type" : "text",        "content" : "6" } }
+            ],
+            [
+                { "content" : { "type" : "text",        "content" : "14" } },
+                { "content" : { "type" : "text",        "content" : "+5" } },
+                { "content" : { "type" : "features",    "content" : [
+                    { "name" : "Regenerating Form",     "id":  "vampire-regenerating-form"}
+                ] } },
+                { "content" : { "type" : "text",        "content" : "6" } }
+            ],
+            [
+                { "content" : { "type" : "text",        "content" : "15" } },
+                { "content" : { "type" : "text",        "content" : "+5" } },
+                { "content" : { "type" : "text",        "content" : "—" } },
+                { "content" : { "type" : "text",        "content" : "7" } }
+            ],
+            [
+                { "content" : { "type" : "text",        "content" : "16" } },
+                { "content" : { "type" : "text",        "content" : "+5" } },
+                { "content" : { "type" : "features",    "content" : [
+                    { "name" : "Ability Score Improvement",  "id":  "vampire-asi"}
+                ] } },
+                { "content" : { "type" : "text",        "content" : "7" } }
+            ],
+            [
+                { "content" : { "type" : "text",        "content" : "17" } },
+                { "content" : { "type" : "text",        "content" : "+6" } },
+                { "content" : { "type" : "features",    "content" : [
+                    { "name" : "Subclass Feature",      "id" : "vampire-subclass" }
+                ] } },
+                { "content" : { "type" : "text",        "content" : "7" } }
+            ],
+            [
+                { "content" : { "type" : "text",        "content" : "18" } },
+                { "content" : { "type" : "text",        "content" : "+6" } },
+                { "content" : { "type" : "text",        "content" : "—" } },
+                { "content" : { "type" : "text",        "content" : "8" } }
+            ],
+            [
+                { "content" : { "type" : "text",        "content" : "19" } },
+                { "content" : { "type" : "text",        "content" : "+6" } },
+                { "content" : { "type" : "features",    "content" : [
+                    { "name" : "Epic Boon",             "id" : "vampire-epic-boon" }
+                ] } },
+                { "content" : { "type" : "text",        "content" : "8" } }
+            ],
+            [
+                { "content" : { "type" : "text",        "content" : "20" } },
+                { "content" : { "type" : "text",        "content" : "+6" } },
+                { "content" : { "type" : "features",    "content" : [
+                    { "name" : "Immortal",              "id" : "vampire-immortal" }
+                ] } },
+                { "content" : { "type" : "text",        "content" : "8" } }
+            ]
+        ]
+    }
+}
