@@ -1,0 +1,358 @@
+{
+    "className" : "Vampire",
+    "tagLine" : "Vampires are undead creatures that feed on the blood of the living, known for their immortality, charm, and endless hunger.",
+    "classTable" : {
+        "type" :        "table",
+        "id" :          "vampire-class-table",
+        "className" :   "table is-striped is-hoverable is-fullwidth",
+        "content" : [
+            {
+                "type" : "thead",
+                "content" : [
+                    {
+                        "type" : "tr",
+                        "className" : "tableExtraHeader",
+                        "content" : [
+                            { "type" : "th", "className" : "classTableLevel" },
+                            { "type" : "th", "className" : "classTableProficiencyBonus",    "content" : "Proficiency" },
+                            { "type" : "th", "className" : "classTableFeatures" },
+                            { "type" : "th", "className" : "classTableResource",            "content" : "Sanguine" }
+                        ]
+                    },
+                    {
+                        "type" : "tr",
+                        "content" : [
+                            { "type" : "th", "className" : "classTableLevel",               "content" : "Level" },
+                            { "type" : "th", "className" : "classTableProficiencyBonus",    "content" : "Bonus" },
+                            { "type" : "th", "className" : "classTableFeatures",            "content" : "Class Features" },
+                            { "type" : "th", "className" : "classTableResource",            "content" : "Mutations" }
+                        ]
+                    }
+                ]
+            },
+            {
+                "type" : "tbody",
+                "content" : [
+                    {
+                        "type" : "tr",
+                        "goto" : "vampire-level-1",
+                        "content" : [
+                            { "type" : "td", "className" : "classTableLevel",               "content" : 1 },
+                            { "type" : "td", "className" : "classTableProficiencyBonus",    "content" : "+2" },
+                            { "type" : "td", "className" : "classTableFeatures",            "content" : [
+                                { "type" : "a", "goto" : "vampire-feed",                    "content" : "Feed" }, ", ",
+                                { "type" : "a", "goto" : "vampire-strength-of-blood",       "content" : "Strength of Blood" }, ", ",
+                                { "type" : "a", "goto" : "vampire-vampiric-curse",          "content" : "Vampiric Curse" }
+                            ]},
+                            { "type" : "td", "className" : "classTableResource",            "content" : "—" }
+                        ]
+                    },
+                    {
+                        "type" : "tr",
+                        "goto" : "vampire-level-2",
+                        "content" : [
+                            { "type" : "td", "className" : "classTableLevel",               "content" : 2 },
+                            { "type" : "td", "className" : "classTableProficiencyBonus",    "content" : "+2" },
+                            { "type" : "td", "className" : "classTableFeatures",            "content" : [
+                                { "type" : "a", "goto" : "vampire-blood-sacrifice",         "content" : "Blood Sacrifice" }, ", ",
+                                { "type" : "a", "goto" : "vampire-sanguine-mutations",      "content" : "Sanguine Mutations" }
+                            ]},
+                            { "type" : "td", "className" : "classTableResource",            "content" : 2 }
+                        ]
+                    },
+                    {
+                        "type" : "tr",
+                        "goto" : "vampire-level-3",
+                        "content" : [
+                            { "type" : "td", "className" : "classTableLevel",               "content" : 3 },
+                            { "type" : "td", "className" : "classTableProficiencyBonus",    "content" : "+2" },
+                            { "type" : "td", "className" : "classTableFeatures",            "content" : [
+                                { "type" : "a", "goto" : "vampire-subclass",                "content" : "Vampire Subclass" }, ", ",
+                                { "type" : "a", "goto" : "vampire-mesmerize",               "content" : "Mesmerize" }
+                            ]},
+                            { "type" : "td", "className" : "classTableResource",            "content" : 2 }
+                        ]
+                    },
+                    {
+                        "type" : "tr",
+                        "goto" : "vampire-level-4",
+                        "content" : [
+                            { "type" : "td", "className" : "classTableLevel",               "content" : 4 },
+                            { "type" : "td", "className" : "classTableProficiencyBonus",    "content" : "+2" },
+                            { "type" : "td", "className" : "classTableFeatures",            "content" : [
+                                { "type" : "a", "goto" : "vampire-asi",                     "content" : "Ability Score Improvement" }
+                            ]},
+                            { "type" : "td", "className" : "classTableResource",            "content" : 3 }
+                        ]
+                    },
+                    {
+                        "type" : "tr",
+                        "goto" : "vampire-level-5",
+                        "content" : [
+                            { "type" : "td", "className" : "classTableLevel",               "content" : 5 },
+                            { "type" : "td", "className" : "classTableProficiencyBonus",    "content" : "+3" },
+                            { "type" : "td", "className" : "classTableFeatures",            "content" : [
+                                { "type" : "a", "goto" : "vampire-extra-attack",            "content" : "Extra Attack" }, ", ",
+                                { "type" : "a", "goto" : "vampire-vampiric-senses",         "content" : "Vampiric Senses" }
+                            ]},
+                            { "type" : "td", "className" : "classTableResource",            "content" : 3 }
+                        ]
+                    },
+                    {
+                        "type" : "tr",
+                        "goto" : "vampire-level-6",
+                        "content" : [
+                            { "type" : "td", "className" : "classTableLevel",               "content" : 6 },
+                            { "type" : "td", "className" : "classTableProficiencyBonus",    "content" : "+3" },
+                            { "type" : "td", "className" : "classTableFeatures",            "content" : [
+                                { "type" : "a", "goto" : "vampire-vicious-strikes",         "content" : "Vicious Strikes" }
+                            ]},
+                            { "type" : "td", "className" : "classTableResource",            "content" : 4 }
+                        ]
+                    },
+                    {
+                        "type" : "tr",
+                        "goto" : "vampire-level-7",
+                        "content" : [
+                            { "type" : "td", "className" : "classTableLevel",               "content" : 7 },
+                            { "type" : "td", "className" : "classTableProficiencyBonus",    "content" : "+3" },
+                            { "type" : "td", "className" : "classTableFeatures",            "content" : [
+                                { "type" : "a", "goto" : "vampire-subclass",                "content" : "Subclass Feature" }
+                            ]},
+                            { "type" : "td", "className" : "classTableResource",            "content" : 4 }
+                        ]
+                    },
+                    {
+                        "type" : "tr",
+                        "goto" : "vampire-level-8",
+                        "content" : [
+                            { "type" : "td", "className" : "classTableLevel",               "content" : 8 },
+                            { "type" : "td", "className" : "classTableProficiencyBonus",    "content" : "+3" },
+                            { "type" : "td", "className" : "classTableFeatures",            "content" : [
+                                { "type" : "a", "goto" : "vampire-asi",                     "content" : "Ability Score Improvement" }
+                            ]},
+                            { "type" : "td", "className" : "classTableResource",            "content" : 4 }
+                        ]
+                    },
+                    {
+                        "type" : "tr",
+                        "goto" : "vampire-level-9",
+                        "content" : [
+                            { "type" : "td", "className" : "classTableLevel",               "content" : 9 },
+                            { "type" : "td", "className" : "classTableProficiencyBonus",    "content" : "+4" },
+                            { "type" : "td", "className" : "classTableFeatures",            "content" : "—" },
+                            { "type" : "td", "className" : "classTableResource",            "content" : 5 }
+                        ]
+                    },
+                    {
+                        "type" : "tr",
+                        "goto" : "vampire-level-10",
+                        "content" : [
+                            { "type" : "td", "className" : "classTableLevel",               "content" : 10 },
+                            { "type" : "td", "className" : "classTableProficiencyBonus",    "content" : "+4" },
+                            { "type" : "td", "className" : "classTableFeatures",            "content" : [
+                                { "type" : "a", "goto" : "vampire-siphon-life",             "content" : "Siphon Life" }
+                            ]},
+                            { "type" : "td", "className" : "classTableResource",            "content" : 5 }
+                        ]
+                    },
+                    {
+                        "type" : "tr",
+                        "goto" : "vampire-level-11",
+                        "content" : [
+                            { "type" : "td", "className" : "classTableLevel",               "content" : 11 },
+                            { "type" : "td", "className" : "classTableProficiencyBonus",    "content" : "+4" },
+                            { "type" : "td", "className" : "classTableFeatures",            "content" : [
+                                { "type" : "a", "goto" : "vampire-subclass",                "content" : "Subclass Feature" }
+                            ]},
+                            { "type" : "td", "className" : "classTableResource",            "content" : 5 }
+                        ]
+                    },
+                    {
+                        "type" : "tr",
+                        "goto" : "vampire-level-12",
+                        "content" : [
+                            { "type" : "td", "className" : "classTableLevel",               "content" : 12 },
+                            { "type" : "td", "className" : "classTableProficiencyBonus",    "content" : "+4" },
+                            { "type" : "td", "className" : "classTableFeatures",            "content" : [
+                                { "type" : "a", "goto" : "vampire-asi",                     "content" : "Ability Score Improvement" }
+                            ]},
+                            { "type" : "td", "className" : "classTableResource",            "content" : 6 }
+                        ]
+                    },
+                    {
+                        "type" : "tr",
+                        "goto" : "vampire-level-13",
+                        "content" : [
+                            { "type" : "td", "className" : "classTableLevel",               "content" : 13 },
+                            { "type" : "td", "className" : "classTableProficiencyBonus",    "content" : "+4" },
+                            { "type" : "td", "className" : "classTableFeatures",            "content" : [
+                                { "type" : "a", "goto" : "vampire-ravenous-strikes",        "content" : "Ravenous Strikes" }
+                            ]},
+                            { "type" : "td", "className" : "classTableResource",            "content" : 6 }
+                        ]
+                    },
+                    {
+                        "type" : "tr",
+                        "goto" : "vampire-level-14",
+                        "content" : [
+                            { "type" : "td", "className" : "classTableLevel",               "content" : 14 },
+                            { "type" : "td", "className" : "classTableProficiencyBonus",    "content" : "+5" },
+                            { "type" : "td", "className" : "classTableFeatures",            "content" : [
+                                { "type" : "a", "goto" : "vampire-regenerating-form",       "content" : "Regenerating Form" }
+                            ]},
+                            { "type" : "td", "className" : "classTableResource",            "content" : 6 }
+                        ]
+                    },
+                    {
+                        "type" : "tr",
+                        "goto" : "vampire-level-15",
+                        "content" : [
+                            { "type" : "td", "className" : "classTableLevel",               "content" : 15 },
+                            { "type" : "td", "className" : "classTableProficiencyBonus",    "content" : "+5"},
+                            { "type" : "td", "className" : "classTableFeatures",            "content" : "—" },
+                            { "type" : "td", "className" : "classTableResource",            "content" : 7 }
+                        ]
+                    },
+                    {
+                        "type" : "tr",
+                        "goto" : "vampire-level-16",
+                        "content" : [
+                            { "type" : "td", "className" : "classTableLevel",               "content" : 16 },
+                            { "type" : "td", "className" : "classTableProficiencyBonus",    "content" : "+4" },
+                            { "type" : "td", "className" : "classTableFeatures",            "content" : [
+                                { "type" : "a", "goto" : "vampire-asi",                     "content" : "Ability Score Improvement" }
+                            ]},
+                            { "type" : "td", "className" : "classTableResource",            "content" : 7 }
+                        ]
+                    },
+                    {
+                        "type" : "tr",
+                        "goto" : "vampire-level-17",
+                        "content" : [
+                            { "type" : "td", "className" : "classTableLevel",               "content" : 17 },
+                            { "type" : "td", "className" : "classTableProficiencyBonus",    "content" : "+6" },
+                            { "type" : "td", "className" : "classTableFeatures",            "content" : [
+                                { "type" : "a", "goto" : "vampire-subclass",                "content" : "Subclass Feature" }
+                            ]},
+                            { "type" : "td", "className" : "classTableResource",            "content" : 7 }
+                        ]
+                    },
+                    {
+                        "type" : "tr",
+                        "goto" : "vampire-level-18",
+                        "content" : [
+                            { "type" : "td", "className" : "classTableLevel",               "content" : 18 },
+                            { "type" : "td", "className" : "classTableProficiencyBonus",    "content" : "+6"},
+                            { "type" : "td", "className" : "classTableFeatures",            "content" : "—" },
+                            { "type" : "td", "className" : "classTableResource",            "content" : 8 }
+                        ]
+                    },
+                    {
+                        "type" : "tr",
+                        "goto" : "vampire-level-19",
+                        "content" : [
+                            { "type" : "td", "className" : "classTableLevel",               "content" : 19 },
+                            { "type" : "td", "className" : "classTableProficiencyBonus",    "content" : "+6" },
+                            { "type" : "td", "className" : "classTableFeatures",            "content" : [
+                                { "type" : "a", "goto" : "vampire-epic-boon",               "content" : "Epic Boon" }
+                            ]},
+                            { "type" : "td", "className" : "classTableResource",            "content" : 8 }
+                        ]
+                    },
+                    {
+                        "type" : "tr",
+                        "goto" : "vampire-level-20",
+                        "content" : [
+                            { "type" : "td", "className" : "classTableLevel",               "content" : 20 },
+                            { "type" : "td", "className" : "classTableProficiencyBonus",    "content" : "+6" },
+                            { "type" : "td", "className" : "classTableFeatures",            "content" : [
+                                { "type" : "a", "goto" : "vampire-immortal",                "content" : "Immortal" }
+                            ]},
+                            { "type" : "td", "className" : "classTableResource",            "content" : 8 }
+                        ]
+                    }
+                ]
+            }
+        ]
+        },
+    "coreTable" : {
+        "type" :        "table",
+        "id" :          "vampire-core-table",
+        "className" :   "table is-striped is-fullwidth",
+        "content" : [
+            {
+                "type" :    "thead",
+                "css" :     "display: none",
+                "content" : [
+                    {
+                        "type" :    "tr", 
+                        "content" : [
+                            { "type" : "th", "css" : "text-align: left; white-space: nowrap; width: 1%; min-width: 200px; font-weight: bold" },
+                            { "type" : "th", "css" : "text-align: left; white-space: nowrap; width: auto" }
+                        ]
+                    }
+                ]
+            },
+            {
+                "type" : "tbody",
+                "content" : [
+                    {
+                        "type" : "tr",
+                        "content" : [
+                            { "type" : "td", "content" : "Primary Ability", "css" : "font-weight: bold" },
+                            { "type" : "td", "content" : "Strength and Charisma" }
+                        ]
+                    },
+                    {
+                        "type" : "tr",
+                        "content" : [
+                            { "type" : "td", "content" : "Hit Die", "css" : "font-weight: bold" },
+                            { "type" : "td", "content" : "D8 per Vampire level" }
+                        ]
+                    },
+                    {
+                        "type" : "tr",
+                        "content" : [
+                            { "type" : "td", "content" : "Saving Throw Proficiencies", "css" : "font-weight: bold" },
+                            { "type" : "td", "content" : "Constitution and Charisma" }
+                        ]
+                    },
+                    {
+                        "type" : "tr",
+                        "content" : [
+                            { "type" : "td", "content" : "Skill Proficiencies", "css" : "font-weight: bold" },
+                            { 
+                                "type" : "td", 
+                                "content" : [
+                                    { "type" : "span", "content" : "Choose 2:", "css" : "font-weight: bold; font-style: italic; padding-right: 0.5em;" },
+                                    "Acrobatics, Arcana, Deception, History, Insight, Intimidation, Persuasion, Performance, and Stealth"
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "type" : "tr",
+                        "content" : [
+                            { "type" : "td", "content" : "Weapon Proficiencies", "css" : "font-weight: bold" },
+                            { "type" : "td", "content" : "Simple Weapons" }
+                        ]
+                    },
+                    {
+                        "type" : "tr",
+                        "content" : [
+                            { "type" : "td", "content" : "Starting Equipment", "css" : "font-weight: bold" },
+                            { 
+                                "type" : "td",
+                                "content" : [
+                                    { "type" : "span", "content" : "Choose A or B:", "css" : "font-weight: bold; font-style: italic; padding-right: 0.5em;" },
+                                    "(A) Rapier, two daggers, scholar's pack, and 5 GP; or (B) 70 GP"
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

@@ -1,0 +1,21 @@
+.classTableLevel, .classTableProficiencyBonus, .classTableResource {
+    text-align: center !important;
+    white-space: nowrap !important; 
+    width: 1% !important; 
+    min-width: 50px !important;
+}
+
+.classTableFeatures {
+    text-align: left !important;   
+    white-space: nowrap !important;
+    width: auto !important;
+}
+
+.tableExtraHeader > th {
+    border-bottom: 0px !important;
+    padding-bottom: 0px !important;
+}
+
+.tableExtraHeader ~ tr > th {
+    padding-top: 0px !important;
+}

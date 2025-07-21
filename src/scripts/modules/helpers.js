@@ -35,21 +35,12 @@ export function fetchJSON(filePath) {
  */
 export function createElement(tag, options = {}) {
     const element = document.createElement(tag);
-    
-    // Set basic properties
     if (options.className) element.className = options.className;
     if (options.id) element.id = options.id;
     if (options.content) element.textContent = options.content;
-    
-    // Apply styles
     if (options.style) Object.assign(element.style, options.style);
-    
-    // Set custom attributes
     if (options.attributes) Object.entries(options.attributes).forEach(([key, value]) => element.setAttribute(key, value));
-    
-    // Set custom properties
     if (options.properties) Object.assign(element, options.properties);
-    
     return element;
 }
 
@@ -62,6 +53,10 @@ export function waitForDOM() {
         if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', resolve);
         else resolve();
     });
+}
+
+export function kebabToCamelCase(str) {
+    return str.replace(/-([a-z])/g, (g) => g[1].toUpperCase());
 }
 
 /** * Parse CSS properties from string or array format
@@ -77,9 +72,7 @@ export function parseCSSProperties(cssProperties) {
             const trimmed = prop.trim();
             if (trimmed) {
                 const [key, value] = trimmed.split(':').map(s => s.trim());
-                if (key && value) {
-                    acc[key.replace(/-([a-z])/g, (g) => g[1].toUpperCase())] = value;
-                }
+                if (key && value) acc[key.replace(/-([a-z])/g, (g) => g[1].toUpperCase())] = value;
             }
             return acc;
         }, {});
@@ -93,4 +86,41 @@ export function parseCSSProperties(cssProperties) {
     }
     
     return {};
+}
+
+/**
+ * Interprets and renders content based on its type
+ * @param {Object} data - The content object with type and content properties
+ */
+export function interpretContent(data) {
+    if (!data?.type) return createElement('span', { content: data });
+    const element = createElement(data.type);
+    
+    // Check if content is an array or a single object
+    if (Array.isArray(data.content))
+        data.content.forEach(item => {
+            const itemElement = interpretContent(item);
+            if (itemElement) element.appendChild(itemElement);
+        });
+    else if (data.content) element.appendChild(interpretContent(data.content));
+
+    // Set properties and attributes
+    if (data.className) element.classList.add(...data.className.split(' '));
+    if (data.css) Object.assign(element.style, parseCSSProperties(data.css));
+    if (data.id) element.id = data.id;
+    if (data.goto) {
+        element.addEventListener('click', (event) => {
+            if (event.defaultPrevented) return;
+            event.stopPropagation(); // Prevent event from bubbling to parent elements
+            console.log(`Navigating to: #${data.goto}`);
+            const targetElement = document.getElementById(data.goto);
+            if (targetElement) {
+                event.preventDefault();
+                targetElement.scrollIntoView({ behavior: 'smooth' });
+                window.location.hash = data.goto;
+            }
+        });
+    }
+
+    return element;
 }
