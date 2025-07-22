@@ -1,5 +1,5 @@
 // Import helper functions from the helpers module
-import { fetchJSON, createElement, waitForDOM, parseCSSProperties, interpretContent, kebabToCamelCase} from '../modules/helpers.js';
+import { fetchJSON, waitForDOM, interpretContent, kebabToCamelCase} from '../modules/helpers.js';
 
 const data = {};
 
@@ -14,6 +14,7 @@ waitForDOM().then(async () => {
 
 async function generateContent() {
     for (const element of document.querySelectorAll('.generated')) {
+        console.log('Generating content for:', element);
         const genType = element.getAttribute('gen-type');
         const src = element.getAttribute('src');
         data[src] ??= await fetchJSON(`data/${src}.json`);
