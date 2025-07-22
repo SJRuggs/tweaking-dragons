@@ -225,6 +225,10 @@ a:hover {
   padding: 2rem !important;
 }
 
+.subclasses {
+  padding: 2rem 0 !important;
+}
+
 .indent {
   text-indent: 1.5rem;
 }

@@ -82,7 +82,6 @@ export function interpretContent(data) {
     });
 
     [data.content].flat().filter(Boolean).forEach(item => element.appendChild(interpretContent(item, element)));
-
     return element;
 }
 
@@ -112,8 +111,9 @@ export function createElement(tag, options = {}) {
         element.addEventListener('click', (event) => {
             event.preventDefault();
             event.stopPropagation();
-            let targetElement = document.getElementById(options.goto);
-            const parts = options.goto.split('-');
+            let goto = options.goto;
+            let targetElement = document.getElementById(goto);
+            const parts = goto.split('-');
             let num = parseInt(parts.pop());
             const str = parts.join('-');
             if (!targetElement && !isNaN(num) && num > 0) {
@@ -121,17 +121,17 @@ export function createElement(tag, options = {}) {
                     const nextElement = document.getElementById(`${str}-${num}`);
                     if (nextElement) {
                         targetElement = nextElement;
+                        goto = `${str}-${num}`;
                         break;
                     }
                     num--;
                 }
             }
             if (targetElement) {
-                console.log(`Navigating to: #${options.goto}`);
-                const yOffset = -100;
-                const y = targetElement.getBoundingClientRect().top + window.pageYOffset + yOffset;
+                console.log(`Navigating to: #${goto}`);
+                const y = targetElement.getBoundingClientRect().top + window.pageYOffset;
                 window.scrollTo({ top: y, behavior: 'smooth' });
-                setTimeout(() => { window.location.hash = options.goto; }, 400);
+                setTimeout(() => { window.location.hash = goto; }, 400);
             }
         });
     }

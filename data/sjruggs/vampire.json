@@ -57,12 +57,8 @@
                                 "goto" : "vampire-level-1",
                                 "content" : [
                                     { "type" : "td", "className" : "class-table-level",               "content" : 1 },
-                                    { "type" : "td", "className" : "class-table-proficiency-bonus",    "content" : "+2" },
-                                    { "type" : "td", "className" : "class-table-features",            "content" : [
-                                        { "type" : "a", "goto" : "vampire-feed",                    "content" : "Feed" }, ", ",
-                                        { "type" : "a", "goto" : "vampire-vampiric-curse",          "content" : "Vampiric Curse" }, ", ",
-                                        { "type" : "a", "goto" : "vampire-strength-of-blood",       "content" : "Strength of Blood" }
-                                    ]},
+                                    { "type" : "td", "className" : "class-table-proficiency-bonus",   "content" : "+2" },
+                                    { "type" : "td", "className" : "class-table-features",            "content" : "Feed, Vampiric Curse, Strength of Blood" },
                                     { "type" : "td", "className" : "class-table-resource",            "content" : "—" }
                                 ]
                             },
@@ -71,11 +67,8 @@
                                 "goto" : "vampire-level-2",
                                 "content" : [
                                     { "type" : "td", "className" : "class-table-level",               "content" : 2 },
-                                    { "type" : "td", "className" : "class-table-proficiency-bonus",    "content" : "+2" },
-                                    { "type" : "td", "className" : "class-table-features",            "content" : [
-                                        { "type" : "a", "goto" : "vampire-blood-sacrifice",         "content" : "Blood Sacrifice" }, ", ",
-                                        { "type" : "a", "goto" : "vampire-sanguine-mutations",      "content" : "Sanguine Mutations" }
-                                    ]},
+                                    { "type" : "td", "className" : "class-table-proficiency-bonus",   "content" : "+2" },
+                                    { "type" : "td", "className" : "class-table-features",            "content" : "Blood Sacrifice, Strength of Blood" },
                                     { "type" : "td", "className" : "class-table-resource",            "content" : 2 }
                                 ]
                             },
@@ -84,11 +77,8 @@
                                 "goto" : "vampire-level-3",
                                 "content" : [
                                     { "type" : "td", "className" : "class-table-level",               "content" : 3 },
-                                    { "type" : "td", "className" : "class-table-proficiency-bonus",    "content" : "+2" },
-                                    { "type" : "td", "className" : "class-table-features",            "content" : [
-                                        { "type" : "a", "goto" : "vampire-subclass",                "content" : "Vampire Subclass" }, ", ",
-                                        { "type" : "a", "goto" : "vampire-mesmerize",               "content" : "Mesmerize" }
-                                    ]},
+                                    { "type" : "td", "className" : "class-table-proficiency-bonus",   "content" : "+2" },
+                                    { "type" : "td", "className" : "class-table-features",            "content" : "Vampire Subclass, Mesmerize" },
                                     { "type" : "td", "className" : "class-table-resource",            "content" : 2 }
                                 ]
                             },
@@ -97,10 +87,8 @@
                                 "goto" : "vampire-level-4",
                                 "content" : [
                                     { "type" : "td", "className" : "class-table-level",               "content" : 4 },
-                                    { "type" : "td", "className" : "class-table-proficiency-bonus",    "content" : "+2" },
-                                    { "type" : "td", "className" : "class-table-features",            "content" : [
-                                        { "type" : "a", "goto" : "vampire-asi",                     "content" : "Ability Score Improvement" }
-                                    ]},
+                                    { "type" : "td", "className" : "class-table-proficiency-bonus",   "content" : "+2" },
+                                    { "type" : "td", "className" : "class-table-features",            "content" : "Ability Score Improvement" },
                                     { "type" : "td", "className" : "class-table-resource",            "content" : 3 }
                                 ]
                             },
@@ -109,11 +97,8 @@
                                 "goto" : "vampire-level-5",
                                 "content" : [
                                     { "type" : "td", "className" : "class-table-level",               "content" : 5 },
-                                    { "type" : "td", "className" : "class-table-proficiency-bonus",    "content" : "+3" },
-                                    { "type" : "td", "className" : "class-table-features",            "content" : [
-                                        { "type" : "a", "goto" : "vampire-extra-attack",            "content" : "Extra Attack" }, ", ",
-                                        { "type" : "a", "goto" : "vampire-vampiric-senses",         "content" : "Vampiric Senses" }
-                                    ]},
+                                    { "type" : "td", "className" : "class-table-proficiency-bonus",   "content" : "+3" },
+                                    { "type" : "td", "className" : "class-table-features",            "content" : "Extra Attack, Vampiric Senses" },
                                     { "type" : "td", "className" : "class-table-resource",            "content" : 3 }
                                 ]
                             },
@@ -122,10 +107,8 @@
                                 "goto" : "vampire-level-6",
                                 "content" : [
                                     { "type" : "td", "className" : "class-table-level",               "content" : 6 },
-                                    { "type" : "td", "className" : "class-table-proficiency-bonus",    "content" : "+3" },
-                                    { "type" : "td", "className" : "class-table-features",            "content" : [
-                                        { "type" : "a", "goto" : "vampire-vicious-strikes",         "content" : "Vicious Strikes" }
-                                    ]},
+                                    { "type" : "td", "className" : "class-table-proficiency-bonus",   "content" : "+3" },
+                                    { "type" : "td", "className" : "class-table-features",            "content" : "Vicious Strikes" },
                                     { "type" : "td", "className" : "class-table-resource",            "content" : 4 }
                                 ]
                             },
@@ -134,10 +117,8 @@
                                 "goto" : "vampire-level-7",
                                 "content" : [
                                     { "type" : "td", "className" : "class-table-level",               "content" : 7 },
-                                    { "type" : "td", "className" : "class-table-proficiency-bonus",    "content" : "+3" },
-                                    { "type" : "td", "className" : "class-table-features",            "content" : [
-                                        { "type" : "a", "goto" : "vampire-subclass",                "content" : "Subclass Feature" }
-                                    ]},
+                                    { "type" : "td", "className" : "class-table-proficiency-bonus",   "content" : "+3" },
+                                    { "type" : "td", "className" : "class-table-features",            "content" : "Subclass Feature" },
                                     { "type" : "td", "className" : "class-table-resource",            "content" : 4 }
                                 ]
                             },
@@ -146,10 +127,8 @@
                                 "goto" : "vampire-level-8",
                                 "content" : [
                                     { "type" : "td", "className" : "class-table-level",               "content" : 8 },
-                                    { "type" : "td", "className" : "class-table-proficiency-bonus",    "content" : "+3" },
-                                    { "type" : "td", "className" : "class-table-features",            "content" : [
-                                        { "type" : "a", "goto" : "vampire-asi",                     "content" : "Ability Score Improvement" }
-                                    ]},
+                                    { "type" : "td", "className" : "class-table-proficiency-bonus",   "content" : "+3" },
+                                    { "type" : "td", "className" : "class-table-features",            "content" : "Ability Score Improvement" },
                                     { "type" : "td", "className" : "class-table-resource",            "content" : 4 }
                                 ]
                             },
@@ -158,7 +137,7 @@
                                 "goto" : "vampire-level-9",
                                 "content" : [
                                     { "type" : "td", "className" : "class-table-level",               "content" : 9 },
-                                    { "type" : "td", "className" : "class-table-proficiency-bonus",    "content" : "+4" },
+                                    { "type" : "td", "className" : "class-table-proficiency-bonus",   "content" : "+4" },
                                     { "type" : "td", "className" : "class-table-features",            "content" : "—" },
                                     { "type" : "td", "className" : "class-table-resource",            "content" : 5 }
                                 ]
@@ -168,10 +147,8 @@
                                 "goto" : "vampire-level-10",
                                 "content" : [
                                     { "type" : "td", "className" : "class-table-level",               "content" : 10 },
-                                    { "type" : "td", "className" : "class-table-proficiency-bonus",    "content" : "+4" },
-                                    { "type" : "td", "className" : "class-table-features",            "content" : [
-                                        { "type" : "a", "goto" : "vampire-siphon-life",             "content" : "Siphon Life" }
-                                    ]},
+                                    { "type" : "td", "className" : "class-table-proficiency-bonus",   "content" : "+4" },
+                                    { "type" : "td", "className" : "class-table-features",            "content" : "Siphon Life" },
                                     { "type" : "td", "className" : "class-table-resource",            "content" : 5 }
                                 ]
                             },
@@ -180,10 +157,8 @@
                                 "goto" : "vampire-level-11",
                                 "content" : [
                                     { "type" : "td", "className" : "class-table-level",               "content" : 11 },
-                                    { "type" : "td", "className" : "class-table-proficiency-bonus",    "content" : "+4" },
-                                    { "type" : "td", "className" : "class-table-features",            "content" : [
-                                        { "type" : "a", "goto" : "vampire-subclass",                "content" : "Subclass Feature" }
-                                    ]},
+                                    { "type" : "td", "className" : "class-table-proficiency-bonus",   "content" : "+4" },
+                                    { "type" : "td", "className" : "class-table-features",            "content" : "Subclass Feature" },
                                     { "type" : "td", "className" : "class-table-resource",            "content" : 5 }
                                 ]
                             },
@@ -192,10 +167,8 @@
                                 "goto" : "vampire-level-12",
                                 "content" : [
                                     { "type" : "td", "className" : "class-table-level",               "content" : 12 },
-                                    { "type" : "td", "className" : "class-table-proficiency-bonus",    "content" : "+4" },
-                                    { "type" : "td", "className" : "class-table-features",            "content" : [
-                                        { "type" : "a", "goto" : "vampire-asi",                     "content" : "Ability Score Improvement" }
-                                    ]},
+                                    { "type" : "td", "className" : "class-table-proficiency-bonus",   "content" : "+4" },
+                                    { "type" : "td", "className" : "class-table-features",            "content" : "Ability Score Improvement" },
                                     { "type" : "td", "className" : "class-table-resource",            "content" : 6 }
                                 ]
                             },
@@ -204,10 +177,8 @@
                                 "goto" : "vampire-level-13",
                                 "content" : [
                                     { "type" : "td", "className" : "class-table-level",               "content" : 13 },
-                                    { "type" : "td", "className" : "class-table-proficiency-bonus",    "content" : "+4" },
-                                    { "type" : "td", "className" : "class-table-features",            "content" : [
-                                        { "type" : "a", "goto" : "vampire-ravenous-strikes",        "content" : "Ravenous Strikes" }
-                                    ]},
+                                    { "type" : "td", "className" : "class-table-proficiency-bonus",   "content" : "+4" },
+                                    { "type" : "td", "className" : "class-table-features",            "content" : "Ravenous Strikes" },
                                     { "type" : "td", "className" : "class-table-resource",            "content" : 6 }
                                 ]
                             },
@@ -216,10 +187,8 @@
                                 "goto" : "vampire-level-14",
                                 "content" : [
                                     { "type" : "td", "className" : "class-table-level",               "content" : 14 },
-                                    { "type" : "td", "className" : "class-table-proficiency-bonus",    "content" : "+5" },
-                                    { "type" : "td", "className" : "class-table-features",            "content" : [
-                                        { "type" : "a", "goto" : "vampire-regenerating-form",       "content" : "Regenerating Form" }
-                                    ]},
+                                    { "type" : "td", "className" : "class-table-proficiency-bonus",   "content" : "+5" },
+                                    { "type" : "td", "className" : "class-table-features",            "content" : "Regenerating Form" },
                                     { "type" : "td", "className" : "class-table-resource",            "content" : 6 }
                                 ]
                             },
@@ -228,7 +197,7 @@
                                 "goto" : "vampire-level-15",
                                 "content" : [
                                     { "type" : "td", "className" : "class-table-level",               "content" : 15 },
-                                    { "type" : "td", "className" : "class-table-proficiency-bonus",    "content" : "+5"},
+                                    { "type" : "td", "className" : "class-table-proficiency-bonus",   "content" : "+5"},
                                     { "type" : "td", "className" : "class-table-features",            "content" : "—" },
                                     { "type" : "td", "className" : "class-table-resource",            "content" : 7 }
                                 ]
@@ -238,10 +207,8 @@
                                 "goto" : "vampire-level-16",
                                 "content" : [
                                     { "type" : "td", "className" : "class-table-level",               "content" : 16 },
-                                    { "type" : "td", "className" : "class-table-proficiency-bonus",    "content" : "+4" },
-                                    { "type" : "td", "className" : "class-table-features",            "content" : [
-                                        { "type" : "a", "goto" : "vampire-asi",                     "content" : "Ability Score Improvement" }
-                                    ]},
+                                    { "type" : "td", "className" : "class-table-proficiency-bonus",   "content" : "+4" },
+                                    { "type" : "td", "className" : "class-table-features",            "content" : "Ability Score Improvement" },
                                     { "type" : "td", "className" : "class-table-resource",            "content" : 7 }
                                 ]
                             },
@@ -250,10 +217,8 @@
                                 "goto" : "vampire-level-17",
                                 "content" : [
                                     { "type" : "td", "className" : "class-table-level",               "content" : 17 },
-                                    { "type" : "td", "className" : "class-table-proficiency-bonus",    "content" : "+6" },
-                                    { "type" : "td", "className" : "class-table-features",            "content" : [
-                                        { "type" : "a", "goto" : "vampire-subclass",                "content" : "Subclass Feature" }
-                                    ]},
+                                    { "type" : "td", "className" : "class-table-proficiency-bonus",   "content" : "+6" },
+                                    { "type" : "td", "className" : "class-table-features",            "content" : "Subclass Feature" },
                                     { "type" : "td", "className" : "class-table-resource",            "content" : 7 }
                                 ]
                             },
@@ -262,7 +227,7 @@
                                 "goto" : "vampire-level-18",
                                 "content" : [
                                     { "type" : "td", "className" : "class-table-level",               "content" : 18 },
-                                    { "type" : "td", "className" : "class-table-proficiency-bonus",    "content" : "+6"},
+                                    { "type" : "td", "className" : "class-table-proficiency-bonus",   "content" : "+6"},
                                     { "type" : "td", "className" : "class-table-features",            "content" : "—" },
                                     { "type" : "td", "className" : "class-table-resource",            "content" : 8 }
                                 ]
@@ -272,10 +237,8 @@
                                 "goto" : "vampire-level-19",
                                 "content" : [
                                     { "type" : "td", "className" : "class-table-level",               "content" : 19 },
-                                    { "type" : "td", "className" : "class-table-proficiency-bonus",    "content" : "+6" },
-                                    { "type" : "td", "className" : "class-table-features",            "content" : [
-                                        { "type" : "a", "goto" : "vampire-epic-boon",               "content" : "Epic Boon" }
-                                    ]},
+                                    { "type" : "td", "className" : "class-table-proficiency-bonus",   "content" : "+6" },
+                                    { "type" : "td", "className" : "class-table-features",            "content" : "Epic Boon" },
                                     { "type" : "td", "className" : "class-table-resource",            "content" : 8 }
                                 ]
                             },
@@ -284,10 +247,8 @@
                                 "goto" : "vampire-level-20",
                                 "content" : [
                                     { "type" : "td", "className" : "class-table-level",               "content" : 20 },
-                                    { "type" : "td", "className" : "class-table-proficiency-bonus",    "content" : "+6" },
-                                    { "type" : "td", "className" : "class-table-features",            "content" : [
-                                        { "type" : "a", "goto" : "vampire-immortal",                "content" : "Immortal" }
-                                    ]},
+                                    { "type" : "td", "className" : "class-table-proficiency-bonus",   "content" : "+6" },
+                                    { "type" : "td", "className" : "class-table-features",            "content" : "Immortal" },
                                     { "type" : "td", "className" : "class-table-resource",            "content" : 8 }
                                 ]
                             }
@@ -536,7 +497,12 @@
                             { "type" : "a", "content" : "Bloodmorph",   "goto" : "vampire-bloodmorph" }, ", ",
                             { "type" : "a", "content" : "Sovereign",    "goto" : "vampire-sovereign" }, ", and ",
                             { "type" : "a", "content" : "Veincaller",   "goto" : "vampire-veincaller" },
-                            " subclasses are detailed after this class's description. A subclass is a specialization that grants you features at certain Vampire levels. For the rest of your career, you gain each of your subclass's features that are of your Vampire level or lower."
+                            " subclasses are detailed after this class's description. A subclass is a specialization that grants you features at certain Vampire levels. For the rest of your career, you gain each of your subclass's features that are of your Vampire level or lower.",
+                            { "type" : "div", "className" : "grid subclasses",     "content" : [
+                                { "type" : "div", "className" : "cell button", "content" : "Bloodmorph" },
+                                { "type" : "div", "className" : "cell button", "content" : "Sovereign" },
+                                { "type" : "div", "className" : "cell button", "content" : "Veincaller" }
+                            ]}
                         ]},
                         { "type" : "div",           "className" : "class-feature-container",    "id" : "vampire-mesmerize", "content" : [
                             { "type" : "div",       "className" : "class-feature-header",       "content" : "Mesmerize" },
