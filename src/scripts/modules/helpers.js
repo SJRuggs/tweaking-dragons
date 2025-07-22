@@ -31,18 +31,10 @@ export function fetchJSON(filePath) {
  * @param {Object} [options.style] - Style properties object
  * @param {Object} [options.attributes] - Custom attributes object
  * @param {Object} [options.properties] - Custom properties to set on element
+ * @param {string} [options.goto] - Element ID to navigate to on click
+ * @param {string} [options.elementType] - Type of element for goto behavior
  * @returns {HTMLElement} - Created element
  */
-export function createElement(tag, options = {}) {
-    const element = document.createElement(tag);
-    if (options.className) element.className = options.className;
-    if (options.id) element.id = options.id;
-    if (options.content) element.textContent = options.content;
-    if (options.style) Object.assign(element.style, options.style);
-    if (options.attributes) Object.entries(options.attributes).forEach(([key, value]) => element.setAttribute(key, value));
-    if (options.properties) Object.assign(element, options.properties);
-    return element;
-}
 
 /**
  * Wait for DOM content to be loaded
@@ -59,33 +51,20 @@ export function kebabToCamelCase(str) {
     return str.replace(/-([a-z])/g, (g) => g[1].toUpperCase());
 }
 
+
 /** * Parse CSS properties from string or array format
  * @param {string|Array<string>} cssProperties - CSS properties in string or array format
  * @returns {Object} - Parsed CSS properties as an object
  */
 export function parseCSSProperties(cssProperties) {
-    if (!cssProperties) return {};
-    
-    if (typeof cssProperties === 'string') {
-        // Handle string format: "property: value; property2: value2"
-        return cssProperties.split(';').reduce((acc, prop) => {
-            const trimmed = prop.trim();
-            if (trimmed) {
-                const [key, value] = trimmed.split(':').map(s => s.trim());
-                if (key && value) acc[key.replace(/-([a-z])/g, (g) => g[1].toUpperCase())] = value;
-            }
-            return acc;
-        }, {});
-    } else if (Array.isArray(cssProperties)) {
-        // Handle array format: ["property: value", "property2: value2"]
-        return cssProperties.reduce((acc, prop) => {
-            const [key, value] = prop.split(': ');
-            acc[key.replace(/-([a-z])/g, (g) => g[1].toUpperCase())] = value;
-            return acc;
-        }, {});
-    }
-    
-    return {};
+    const parseProperty = (prop) => {
+        const [key, value] = prop.split(':').map(s => s.trim());
+        return key && value ? { [key.replace(/-([a-z])/g, (g) => g[1].toUpperCase())]: value } : {};
+    };
+    const props = typeof cssProperties === 'string' 
+        ? cssProperties.split(';').filter(p => p.trim()) 
+        : cssProperties;
+    return props.reduce((acc, prop) => ({ ...acc, ...parseProperty(prop) }), {});
 }
 
 /**
@@ -93,34 +72,70 @@ export function parseCSSProperties(cssProperties) {
  * @param {Object} data - The content object with type and content properties
  */
 export function interpretContent(data) {
-    if (!data?.type) return createElement('span', { content: data });
-    const element = createElement(data.type);
-    
-    // Check if content is an array or a single object
-    if (Array.isArray(data.content))
-        data.content.forEach(item => {
-            const itemElement = interpretContent(item);
-            if (itemElement) element.appendChild(itemElement);
-        });
-    else if (data.content) element.appendChild(interpretContent(data.content));
+    const element = createElement(data.type || "span", {
+        content:    !data?.type ? data : undefined,
+        className:  data.className,
+        id:         data.id,
+        style:      data.css ? parseCSSProperties(data.css) : undefined,
+        attributes: data.attributes,
+        goto:       data.goto,
+    });
 
-    // Set properties and attributes
-    if (data.className) element.classList.add(...data.className.split(' '));
-    if (data.css) Object.assign(element.style, parseCSSProperties(data.css));
-    if (data.id) element.id = data.id;
-    if (data.goto) {
-        element.addEventListener('click', (event) => {
-            if (event.defaultPrevented) return;
-            event.stopPropagation(); // Prevent event from bubbling to parent elements
-            console.log(`Navigating to: #${data.goto}`);
-            const targetElement = document.getElementById(data.goto);
-            if (targetElement) {
-                event.preventDefault();
-                targetElement.scrollIntoView({ behavior: 'smooth' });
-                window.location.hash = data.goto;
-            }
-        });
-    }
+    [data.content].flat().filter(Boolean).forEach(item => element.appendChild(interpretContent(item, element)));
 
     return element;
 }
+
+/**
+ * Create a DOM element with optional properties and navigation functionality
+ * @param {string} tag - HTML tag name
+ * @param {Object} options - Configuration object
+ * @param {string} [options.className] - CSS class name
+ * @param {string} [options.id] - Element ID
+ * @param {string} [options.content] - Text content
+ * @param {Object} [options.style] - Style properties object
+ * @param {Object} [options.attributes] - Custom attributes object
+ * @param {Object} [options.properties] - Custom properties to set on element
+ * @param {string} [options.goto] - Element ID to navigate to on click
+ * @returns {HTMLElement} - Created element
+ */
+export function createElement(tag, options = {}) {
+    const element = document.createElement(tag);
+    if (options.content)    element.textContent =   options.content;
+    if (options.className)  element.className =     options.className;
+    if (options.id)         element.id =            options.id;
+    if (options.content)    element.textContent =   options.content;
+    if (options.style)      Object.assign(element.style, options.style);
+    if (options.attributes) Object.entries(options.attributes).forEach(([key, value]) => element.setAttribute(key, value));
+    if (options.properties) Object.assign(element, options.properties);
+    if (options.goto) {
+        element.addEventListener('click', (event) => {
+            event.preventDefault();
+            event.stopPropagation();
+            let targetElement = document.getElementById(options.goto);
+            const parts = options.goto.split('-');
+            let num = parseInt(parts.pop());
+            const str = parts.join('-');
+            if (!targetElement && !isNaN(num) && num > 0) {
+                while (!targetElement && num > 0) {
+                    const nextElement = document.getElementById(`${str}-${num}`);
+                    if (nextElement) {
+                        targetElement = nextElement;
+                        break;
+                    }
+                    num--;
+                }
+            }
+            if (targetElement) {
+                console.log(`Navigating to: #${options.goto}`);
+                const yOffset = -100;
+                const y = targetElement.getBoundingClientRect().top + window.pageYOffset + yOffset;
+                window.scrollTo({ top: y, behavior: 'smooth' });
+                setTimeout(() => { window.location.hash = options.goto; }, 400);
+            }
+        });
+    }
+    return element;
+}
+
+

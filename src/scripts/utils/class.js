@@ -6,19 +6,18 @@ const data = {};
 // Helper function to parse CSS properties from string or array format
 
 // Initialize after DOM is ready
-waitForDOM().then(() => {
-    generateContent([
-        { type: 'class-table', src: 'vampire' },
-        { type: 'core-table', src: 'vampire' }
-    ]);
+waitForDOM().then(async () => {
+    await generateContent();    
+    if (window.location.hash) document.getElementById(window.location.hash.slice(1))?.scrollIntoView();
 });
 
 
-async function generateContent(typeArray) {
-    for (const {type, src} of typeArray) {
-        const elements = document.querySelectorAll(`.${type}`);
+async function generateContent() {
+    for (const element of document.querySelectorAll('.generated')) {
+        const genType = element.getAttribute('gen-type');
+        const src = element.getAttribute('src');
         data[src] ??= await fetchJSON(`data/${src}.json`);
-        elements.forEach(content => content.appendChild(interpretContent(data[src][kebabToCamelCase(type)])));
+        element.appendChild(interpretContent(data[src][kebabToCamelCase(genType)], element));
     }
 }
 
