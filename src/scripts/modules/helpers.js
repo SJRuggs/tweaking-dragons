@@ -7,19 +7,14 @@
  */
 export function fetchJSON(filePath) {
     return fetch(filePath)
-        .then(response => {
-            if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
-            return response.json();
-        })
-        .then(data => {
-            console.log(`Loaded data from ${filePath}:`, data);
-            return data;
-        })
-        .catch(error => {
-            console.error('Error fetching the file:', error);
-            throw error; // Re-throw to let caller handle it
-        });
+        .then(response => { if (!response.ok) throw new Error(response.status); return response.json(); })
+        .then(data =>   { return data; })
+        .catch(error => { throw error; });
 }
+
+
+
+
 
 /**
  * Create a DOM element with optional properties
@@ -36,6 +31,10 @@ export function fetchJSON(filePath) {
  * @returns {HTMLElement} - Created element
  */
 
+
+
+
+
 /**
  * Wait for DOM content to be loaded
  * @returns {Promise<void>}
@@ -47,9 +46,8 @@ export function waitForDOM() {
     });
 }
 
-export function kebabToCamelCase(str) {
-    return str.replace(/-([a-z])/g, (g) => g[1].toUpperCase());
-}
+
+
 
 
 /** * Parse CSS properties from string or array format
@@ -67,23 +65,9 @@ export function parseCSSProperties(cssProperties) {
     return props.reduce((acc, prop) => ({ ...acc, ...parseProperty(prop) }), {});
 }
 
-/**
- * Interprets and renders content based on its type
- * @param {Object} data - The content object with type and content properties
- */
-export function interpretContent(data) {
-    const element = createElement(data.type || "span", {
-        content:    !data?.type ? data : undefined,
-        className:  data.className,
-        id:         data.id,
-        style:      data.css ? parseCSSProperties(data.css) : undefined,
-        attributes: data.attributes,
-        goto:       data.goto,
-    });
 
-    [data.content].flat().filter(Boolean).forEach(item => element.appendChild(interpretContent(item, element)));
-    return element;
-}
+
+
 
 /**
  * Create a DOM element with optional properties and navigation functionality
@@ -98,7 +82,7 @@ export function interpretContent(data) {
  * @param {string} [options.goto] - Element ID to navigate to on click
  * @returns {HTMLElement} - Created element
  */
-export function createElement(tag, options = {}) {
+export function createElement(tag, options = {}, children) {
     const element = document.createElement(tag);
     if (options.content)    element.textContent =   options.content;
     if (options.className)  element.className =     options.className;
@@ -107,8 +91,15 @@ export function createElement(tag, options = {}) {
     if (options.style)      Object.assign(element.style, options.style);
     if (options.attributes) Object.entries(options.attributes).forEach(([key, value]) => element.setAttribute(key, value));
     if (options.properties) Object.assign(element, options.properties);
+    if (children) {
+        children.forEach(child => {
+            if (typeof child === 'string') element.appendChild(document.createTextNode(child));
+            else if (child instanceof Node) element.appendChild(child);
+        });
+    }
     if (options.goto) {
         element.addEventListener('click', (event) => {
+            const offset = 30;
             event.preventDefault();
             event.stopPropagation();
             let goto = options.goto;
@@ -129,13 +120,10 @@ export function createElement(tag, options = {}) {
             }
             if (targetElement) {
                 console.log(`Navigating to: #${goto}`);
-                const y = targetElement.getBoundingClientRect().top + window.pageYOffset;
+                const y = targetElement.getBoundingClientRect().top + window.pageYOffset - offset;
                 window.scrollTo({ top: y, behavior: 'smooth' });
-                setTimeout(() => { window.location.hash = goto; }, 400);
             }
         });
     }
     return element;
 }
-
-

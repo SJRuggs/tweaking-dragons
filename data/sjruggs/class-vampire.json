@@ -1,0 +1,674 @@
+{
+    "cssRules" : [
+        { "selector" : "--color-1",     "rule" : "red" },
+        { "selector" : "--color-2",     "rule" : "#211" },
+        { "selector" : "--color-3",     "rule" : "#fff" },
+        {
+            "selector" : ".titleHeader, .class-table-title, .onboarding-header, .class-features-header, .class-feature-header, .menu-label, .class-button",
+            "rule" : "color: var(--color-1); font-weight: bold;"
+        },
+        {
+            "selector" : ".class-button:hover",
+            "rule" : "color: var(--color-2);"
+        },
+        {
+            "selector" : "a, .text-label, .divider-label, .subheader, .core-table-title",
+            "rule" : "color: var(--color-3)"
+        },
+        {
+            "selector" : "tbody > tr > *",
+            "rule" : "border: 0"
+        },
+        {
+            "selector" : ".core-table-title",
+            "rule" : "border-bottom: 3px solid var(--color-3) !important"
+        },
+        {
+            "selector" : ".table-header> *, .onboarding-header, .core-table-title, .class-features-header",
+            "rule" : "border-bottom: 3px solid var(--color-1)"
+        },
+        {
+            "selector" : ".class-button",
+            "rule" : "background: var(--color-2); border: 1px solid var(--color-1);"
+        },
+        {
+            "selector" : ".class-button:hover",
+            "rule" : "background: var(--color-1);"
+        }
+    ],
+    "menu" : { "type" : "aside", "className" : "menu", "content" : [
+        { "type" : "p", "content" : "The Vampire", "className" : "menu-label" },
+        { "type" : "ul", "className" : "menu-list", "content" : [
+            { "type" : "a", "content" : "Class Table",          "goto" : "vampire-class-table" },
+            { "type" : "a", "content" : "Becoming a Vampire",   "goto" : "vampire-onboarding" },
+            { "type" : "a", "content" : "Class Features",       "goto" : "vampire-levels" }
+        ]},
+        { "type" : "p", "content" : "Resources", "className" : "menu-label" },
+        { "type" : "ul", "className" : "menu-list", "content" : [
+            { "type" : "a", "content" : "Sanguine Mutations",   "attributes" : { "href": "/classes/vampire/sanguine-mutations.html" } }
+        ]},
+        { "type" : "p", "content" : "Subclasses", "className" : "menu-label" },
+        { "type" : "ul", "className" : "menu-list", "content" : [
+            { "type" : "a", "content" : "Bloodmorph",   "attributes" : { "href": "/classes/vampire/bloodmorph.html" } },
+            { "type" : "a", "content" : "Sovereign",    "attributes" : { "href": "/classes/vampire/sovereign.html" } },
+            { "type" : "a", "content" : "Veincaller",   "attributes" : { "href": "/classes/vampire/veincaller.html" } }
+        ]}
+    ]},
+    "title" :  { "type" : "section", "id" : "vampire-title", "content" : [
+        { "type" : "h1", "className" : "titleHeader", "content" : "The Vampire" },
+        { "type" : "p", "content" : "Vampires are cursed beings caught between life and death, sustained not by breath or flesh, but by stolen blood. They do not age, do not sleep, and do not die as mortals do. What they lose in warmth, they gain in power and hunger." }
+    ]},
+    "classTable" : {
+        "type" :        "div",
+        "className" :   "class-table-container",
+        "id" :          "vampire-class-table",
+        "wide" : false,
+        "content" : {
+                "type" :        "table",
+                "id" :          "vampire-class-table",
+                "className" :   "table is-striped is-hoverable is-fullwidth",
+                "content" : [
+                {
+                    "type" : "thead",
+                    "className" : "class-table-header",
+                    "content" : [
+                        {
+                            "type" : "tr",
+                            "className" : "table-extra-header desktop",
+                            "content" : [
+                                { "type" : "th", "className" : "class-table-level" },
+                                { "type" : "th", "className" : "class-table-proficiency-bonus",         "content" : "Proficiency" },
+                                { "type" : "th", "className" : "class-table-features" },
+                                { "type" : "th", "className" : "class-table-resource",                  "content" : "Sanguine" }
+                            ]
+                        },
+                        {
+                            "type" : "tr",
+                            "className" : "table-header",
+                            "content" : [
+                                { "type" : "th",        "className" : "class-table-level",              "content" : "Level" },
+                                { "type" : "th",        "className" : "class-table-proficiency-bonus",  "content" : [
+                                    { "type" : "span",  "className" : "desktop",                        "content" : "Bonus" },
+                                    { "type" : "span",  "className" : "mobile",                         "content" : "PB" }
+                                ] },
+                                { "type" : "th", "className" : "class-table-features",                  "content" : [
+                                    { "type" : "span",  "className" : "desktop",                        "content" : "Class Features" },
+                                    { "type" : "span",  "className" : "mobile",                         "content" : "Features" }
+                                ] },
+                                { "type" : "th", "className" : "class-table-resource",                  "content" : "Mutations" }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type" : "tbody",
+                    "className" : "class-table-body",
+                    "content" : [
+                        {
+                            "type" : "tr",
+                            "goto" : "vampire-level-1",
+                            "content" : [
+                                { "type" : "td", "className" : "class-table-level",               "content" : 1 },
+                                { "type" : "td", "className" : "class-table-proficiency-bonus",   "content" : "+2" },
+                                { "type" : "td", "className" : "class-table-features",            "content" : "Feed, Vampiric Curse, Strength of Blood" },
+                                { "type" : "td", "className" : "class-table-resource",            "content" : "—" }
+                            ]
+                        },
+                        {
+                            "type" : "tr",
+                            "goto" : "vampire-level-2",
+                            "content" : [
+                                { "type" : "td", "className" : "class-table-level",               "content" : 2 },
+                                { "type" : "td", "className" : "class-table-proficiency-bonus",   "content" : "+2" },
+                                { "type" : "td", "className" : "class-table-features",            "content" : "Blood Sacrifice, Sanguine Mutations" },
+                                { "type" : "td", "className" : "class-table-resource",            "content" : 2 }
+                            ]
+                        },
+                        {
+                            "type" : "tr",
+                            "goto" : "vampire-level-3",
+                            "content" : [
+                                { "type" : "td", "className" : "class-table-level",               "content" : 3 },
+                                { "type" : "td", "className" : "class-table-proficiency-bonus",   "content" : "+2" },
+                                { "type" : "td", "className" : "class-table-features",            "content" : "Vampire Subclass, Mesmerize" },
+                                { "type" : "td", "className" : "class-table-resource",            "content" : 2 }
+                            ]
+                        },
+                        {
+                            "type" : "tr",
+                            "goto" : "vampire-level-4",
+                            "content" : [
+                                { "type" : "td", "className" : "class-table-level",               "content" : 4 },
+                                { "type" : "td", "className" : "class-table-proficiency-bonus",   "content" : "+2" },
+                                { "type" : "td", "className" : "class-table-features",            "content" : "Ability Score Improvement" },
+                                { "type" : "td", "className" : "class-table-resource",            "content" : 3 }
+                            ]
+                        },
+                        {
+                            "type" : "tr",
+                            "goto" : "vampire-level-5",
+                            "content" : [
+                                { "type" : "td", "className" : "class-table-level",               "content" : 5 },
+                                { "type" : "td", "className" : "class-table-proficiency-bonus",   "content" : "+3" },
+                                { "type" : "td", "className" : "class-table-features",            "content" : "Extra Attack, Vampiric Senses" },
+                                { "type" : "td", "className" : "class-table-resource",            "content" : 3 }
+                            ]
+                        },
+                        {
+                            "type" : "tr",
+                            "goto" : "vampire-level-6",
+                            "content" : [
+                                { "type" : "td", "className" : "class-table-level",               "content" : 6 },
+                                { "type" : "td", "className" : "class-table-proficiency-bonus",   "content" : "+3" },
+                                { "type" : "td", "className" : "class-table-features",            "content" : "Vicious Strikes" },
+                                { "type" : "td", "className" : "class-table-resource",            "content" : 4 }
+                            ]
+                        },
+                        {
+                            "type" : "tr",
+                            "goto" : "vampire-level-7",
+                            "content" : [
+                                { "type" : "td", "className" : "class-table-level",               "content" : 7 },
+                                { "type" : "td", "className" : "class-table-proficiency-bonus",   "content" : "+3" },
+                                { "type" : "td", "className" : "class-table-features",            "content" : "Subclass Feature" },
+                                { "type" : "td", "className" : "class-table-resource",            "content" : 4 }
+                            ]
+                        },
+                        {
+                            "type" : "tr",
+                            "goto" : "vampire-level-8",
+                            "content" : [
+                                { "type" : "td", "className" : "class-table-level",               "content" : 8 },
+                                { "type" : "td", "className" : "class-table-proficiency-bonus",   "content" : "+3" },
+                                { "type" : "td", "className" : "class-table-features",            "content" : "Ability Score Improvement" },
+                                { "type" : "td", "className" : "class-table-resource",            "content" : 4 }
+                            ]
+                        },
+                        {
+                            "type" : "tr",
+                            "goto" : "vampire-level-9",
+                            "content" : [
+                                { "type" : "td", "className" : "class-table-level",               "content" : 9 },
+                                { "type" : "td", "className" : "class-table-proficiency-bonus",   "content" : "+4" },
+                                { "type" : "td", "className" : "class-table-features",            "content" : "—" },
+                                { "type" : "td", "className" : "class-table-resource",            "content" : 5 }
+                            ]
+                        },
+                        {
+                            "type" : "tr",
+                            "goto" : "vampire-level-10",
+                            "content" : [
+                                { "type" : "td", "className" : "class-table-level",               "content" : 10 },
+                                { "type" : "td", "className" : "class-table-proficiency-bonus",   "content" : "+4" },
+                                { "type" : "td", "className" : "class-table-features",            "content" : "Siphon Life" },
+                                { "type" : "td", "className" : "class-table-resource",            "content" : 5 }
+                            ]
+                        },
+                        {
+                            "type" : "tr",
+                            "goto" : "vampire-level-11",
+                            "content" : [
+                                { "type" : "td", "className" : "class-table-level",               "content" : 11 },
+                                { "type" : "td", "className" : "class-table-proficiency-bonus",   "content" : "+4" },
+                                { "type" : "td", "className" : "class-table-features",            "content" : "Subclass Feature" },
+                                { "type" : "td", "className" : "class-table-resource",            "content" : 5 }
+                            ]
+                        },
+                        {
+                            "type" : "tr",
+                            "goto" : "vampire-level-12",
+                            "content" : [
+                                { "type" : "td", "className" : "class-table-level",               "content" : 12 },
+                                { "type" : "td", "className" : "class-table-proficiency-bonus",   "content" : "+4" },
+                                { "type" : "td", "className" : "class-table-features",            "content" : "Ability Score Improvement" },
+                                { "type" : "td", "className" : "class-table-resource",            "content" : 6 }
+                            ]
+                        },
+                        {
+                            "type" : "tr",
+                            "goto" : "vampire-level-13",
+                            "content" : [
+                                { "type" : "td", "className" : "class-table-level",               "content" : 13 },
+                                { "type" : "td", "className" : "class-table-proficiency-bonus",   "content" : "+4" },
+                                { "type" : "td", "className" : "class-table-features",            "content" : "Ravenous Strikes" },
+                                { "type" : "td", "className" : "class-table-resource",            "content" : 6 }
+                            ]
+                        },
+                        {
+                            "type" : "tr",
+                            "goto" : "vampire-level-14",
+                            "content" : [
+                                { "type" : "td", "className" : "class-table-level",               "content" : 14 },
+                                { "type" : "td", "className" : "class-table-proficiency-bonus",   "content" : "+5" },
+                                { "type" : "td", "className" : "class-table-features",            "content" : "Regenerating Form" },
+                                { "type" : "td", "className" : "class-table-resource",            "content" : 6 }
+                            ]
+                        },
+                        {
+                            "type" : "tr",
+                            "goto" : "vampire-level-15",
+                            "content" : [
+                                { "type" : "td", "className" : "class-table-level",               "content" : 15 },
+                                { "type" : "td", "className" : "class-table-proficiency-bonus",   "content" : "+5"},
+                                { "type" : "td", "className" : "class-table-features",            "content" : "—" },
+                                { "type" : "td", "className" : "class-table-resource",            "content" : 7 }
+                            ]
+                        },
+                        {
+                            "type" : "tr",
+                            "goto" : "vampire-level-16",
+                            "content" : [
+                                { "type" : "td", "className" : "class-table-level",               "content" : 16 },
+                                { "type" : "td", "className" : "class-table-proficiency-bonus",   "content" : "+4" },
+                                { "type" : "td", "className" : "class-table-features",            "content" : "Ability Score Improvement" },
+                                { "type" : "td", "className" : "class-table-resource",            "content" : 7 }
+                            ]
+                        },
+                        {
+                            "type" : "tr",
+                            "goto" : "vampire-level-17",
+                            "content" : [
+                                { "type" : "td", "className" : "class-table-level",               "content" : 17 },
+                                { "type" : "td", "className" : "class-table-proficiency-bonus",   "content" : "+6" },
+                                { "type" : "td", "className" : "class-table-features",            "content" : "Subclass Feature" },
+                                { "type" : "td", "className" : "class-table-resource",            "content" : 7 }
+                            ]
+                        },
+                        {
+                            "type" : "tr",
+                            "goto" : "vampire-level-18",
+                            "content" : [
+                                { "type" : "td", "className" : "class-table-level",               "content" : 18 },
+                                { "type" : "td", "className" : "class-table-proficiency-bonus",   "content" : "+6"},
+                                { "type" : "td", "className" : "class-table-features",            "content" : "—" },
+                                { "type" : "td", "className" : "class-table-resource",            "content" : 8 }
+                            ]
+                        },
+                        {
+                            "type" : "tr",
+                            "goto" : "vampire-level-19",
+                            "content" : [
+                                { "type" : "td", "className" : "class-table-level",               "content" : 19 },
+                                { "type" : "td", "className" : "class-table-proficiency-bonus",   "content" : "+6" },
+                                { "type" : "td", "className" : "class-table-features",            "content" : "Epic Boon" },
+                                { "type" : "td", "className" : "class-table-resource",            "content" : 8 }
+                            ]
+                        },
+                        {
+                            "type" : "tr",
+                            "goto" : "vampire-level-20",
+                            "content" : [
+                                { "type" : "td", "className" : "class-table-level",               "content" : 20 },
+                                { "type" : "td", "className" : "class-table-proficiency-bonus",   "content" : "+6" },
+                                { "type" : "td", "className" : "class-table-features",            "content" : "Immortal" },
+                                { "type" : "td", "className" : "class-table-resource",            "content" : 8 }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "onboarding" : {
+        "type" :        "div",
+        "className" :   "onboarding-container",
+        "id" :          "vampire-onboarding",
+        "content" : [
+            { "type" : "div", "className" : "onboarding-header",    "content" : "Becoming A Vampire"  },
+            { "type" : "div", "className" : "size-5 subheader",     "content" : "As a Level 1 Character" },
+            {
+                "type" : "ul", "content" : [
+                    { "type" : "li", "content" : "Gain all the traits in the Core Vampire Traits table." },
+                    { "type" : "li", "content" : "Gain the Vampire's level 1 features, which are listed in the Vampire Features table." }
+                ]
+            },
+            { "type" : "div", "className" : "size-5 subheader",     "content" : "As a Multiclass Character" },
+            {
+                "type" : "ul", "content" : [
+                    { "type" : "li", "content" : "Gain the following traits from the Core Vampire Traits table: Hit Point Die." }
+                ]
+            },
+            {
+                "type" : "div",
+                "className" : "core-table-container",
+                "content" : [
+                    { "type" : "div", "className" : "core-table-title", "content" : "Core Traits" },
+                    {
+                        "type" :        "table",
+                        "id" :          "vampire-core-table",
+                        "className" :   "table is-striped is-fullwidth",
+                        "content" : [
+                            {
+                                "type" :        "thead",
+                                "className" :   "core-table-header",
+                                "content" : [
+                                    {
+                                        "type" :    "tr", 
+                                        "css" :     "display: none",
+                                        "content" : [
+                                            { "type" : "th", "className" : "core-table-left", "content" : "Feature" },
+                                            { "type" : "th", "className" : "core-table-right", "content" : "Description" }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "type" : "tbody",
+                                "className" : "core-table-body",
+                                "content" : [
+                                    {
+                                        "type" : "tr",
+                                        "content" : [
+                                            { "type" : "td", "className" : "core-table-left",     "content" : "Primary Ability", "css" : "font-weight: bold" },
+                                            { "type" : "td", "className" : "core-table-right",    "content" : "Strength and Charisma" }
+                                        ]
+                                    },
+                                    {
+                                        "type" : "tr",
+                                        "content" : [
+                                            { "type" : "td", "className" : "core-table-left",     "content" : "Hit Die", "css" : "font-weight: bold" },
+                                            { "type" : "td", "className" : "core-table-right",    "content" : "D8 per Vampire level" }
+                                        ]
+                                    },
+                                    {
+                                        "type" : "tr",
+                                        "content" : [
+                                            { "type" : "td", "className" : "core-table-left",     "content" : "Saving Throws", "css" : "font-weight: bold" },
+                                            { "type" : "td", "className" : "core-table-right",    "content" : "Constitution and Charisma" }
+                                        ]
+                                    },
+                                    {
+                                        "type" : "tr",
+                                        "content" : [
+                                            { "type" : "td", "className" : "core-table-left",     "content" : "Skill Proficiencies", "css" : "font-weight: bold" },
+                                            { 
+                                                "type" : "td", 
+                                                "className" : "core-table-right",
+                                                "content" : [
+                                                    { "type" : "span", "content" : "Choose 2:", "css" : "font-weight: bold; font-style: italic; padding-right: 0.5em;" },
+                                                    "Acrobatics, Arcana, Deception, History, Insight, Intimidation, Persuasion, Performance, and Stealth"
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "type" : "tr",
+                                        "content" : [
+                                            { "type" : "td", "className" : "core-table-left",     "content" : "Weapon Proficiencies", "css" : "font-weight: bold" },
+                                            { "type" : "td", "className" : "core-table-right",    "content" : "Simple Weapons" }
+                                        ]
+                                    },
+                                    {
+                                        "type" : "tr",
+                                        "content" : [
+                                            { "type" : "td", "className" : "core-table-left",     "content" : "Starting Equipment", "css" : "font-weight: bold" },
+                                            { 
+                                                "type" : "td",
+                                                "className" : "core-table-right",
+                                                "content" : [
+                                                    { "type" : "span", "content" : "Choose A or B:", "css" : "font-weight: bold; font-style: italic; padding-right: 0.5em;" },
+                                                    "(A) Rapier, two daggers, scholar's pack, and 5 GP; or (B) 70 GP"
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "levels" :{
+        "type" :        "div",
+        "className" :   "levels-container",
+        "id" :          "vampire-levels",
+        "content" : [
+            { "type" :      "div",  "className" : "class-features-header",         "content" : "Vampire Class Features" },
+            "As a Vampire, you gain the following class features when you reach the specified Vampire levels. These features are listed in the Vampire Features table.",
+            { "type" :      "div",  "className" : "class-level",    "id" : "vampire-level-1",   "content" : [
+                {
+                    "type" :        "div",
+                    "className" :   "is-flex-grow-1",
+                    "content" : [
+                        { "type" : "div",           "className" : "class-feature-container",    "id" : "vampire-feed", "content" : [
+                            { "type" : "div",       "className" : "class-feature-header",       "content" : "Level 1: Feed" },
+                            { "type" : "p",                                                     "content" : "As a Bonus Action on your turn, you can drink the blood of a Grappled creature or a creature that died in the last hour. Make an Unarmed Strike with Advantage. This attack deals Piercing damage instead of its normal damage type." },
+                            { "type" : "p",         "className" : "indent",                     "content" : "On a hit, if the creature has blood, you drain 1 Hit Die." },
+                            { "type" : "div",       "className" : "size-5 subheader",           "content" : "Draining Hit Dice" },
+                            { "type" : "p",                                                     "content" : "When you drain Hit Dice from a target, it gains one level of exhaustion, it loses that many Hit Dice and you gain that many Hit Dice (even past your maximum)." },
+                            { "type" : "p",         "className" : "indent",                     "content" : "The Hit Dice you gain are d8s. You can't drain Hit Dice that the target doesn't have." }
+                        ]},
+                        { "type" : "div",           "className" : "class-feature-container",    "id" : "vampire-vampiric-curse", "content" : [
+                            { "type" : "div",       "className" : "class-feature-header",       "content" : "Level 1: Vampiric Curse" },
+                            { "type" : "p",                                                     "content" : "Your curse does not come without its benefits—strength and charm are but the beginning." },
+                            { "type" : "div",       "className" : "indent",                     "content" : [
+                                { "type" : "span",  "className" : "text-label",                 "content" : "Accursed. " },
+                                "You are Vulnerable to Radiant and Fire damage, damage from silvered weapons, and Piercing damage from wooden weapons. Additionally, Good-aligned holy symbols burn to the touch, dealing 1d4 Radiant damage to you."
+                            ]},
+                            { "type" : "div",       "className" : "indent",                     "content" : [
+                                { "type" : "span",  "className" : "text-label",                 "content" : "Appearance. " },
+                                "Your skin becomes pale, your upper canines grow into sharp fangs, your sclera (the whites of your eyes) become red or darkened, and your pupils become red or another unnatural hue. Finally, you lack a reflection in mirrors and other reflective surfaces."
+                            ]},
+                            { "type" : "div",       "className" : "indent",                     "content" : [
+                                { "type" : "span",  "className" : "text-label",             "content" : "Exhaustion. " },
+                                "Whenever you regain Hit Dice, remove that many levels of Exhaustion. You can't remove levels of Exhaustion in any other way."
+                            ]},
+                            { "type" : "div",       "className" : "indent",                     "content" : [
+                                { "type" : "span",  "className" : "text-label",             "content" : "Hit Dice. " },
+                                "You don't regain Hit Dice when you finish a Long Rest."
+                            ]},
+                            { "type" : "div",       "className" : "indent",                     "content" : [
+                                { "type" : "span",  "className" : "text-label",             "content" : "Hunger. " },
+                                "Whenever you finish a Long Rest or after 24 hours pass since your last Long Rest (whichever comes first), you lose one Hit Die. If you don't have any hit dice to lose, you gain 1 level of Exhaustion instead."
+                            ]},
+                            { "type" : "div",       "className" : "indent",                     "content" : [
+                                { "type" : "span",  "className" : "text-label",                 "content" : "Sunlight Hypersensitivity. " },
+                                "You are Vulnerable to all damage while you are in direct sunlight, and you have disadvantage on attack rolls and Wisdom (Perception) checks that rely on sight when you, the target of the attack, or whatever you are trying to perceive is in direct sunlight."
+                            ]},
+                            { "type" : "div",       "className" : "indent",                     "content" : [
+                                { "type" : "span",  "className" : "text-label",                 "content" : "Undead. " },
+                                "You are no longer a humanoid, but an undead."
+                            ]},
+                            { "type" : "div",       "className" : "indent",                     "content" : [
+                                { "type" : "span",  "className" : "text-label",                 "content" : "Uninvited. " },
+                                "You cannot enter a residence without an invitation from a living resident."
+                            ]}
+                        ]},
+                        { "type" : "div",           "className" : "class-feature-container",    "id" : "vampire-strength-of-blood", "content" : [
+                            { "type" : "div",       "className" : "class-feature-header",       "content" : "Level 1: Strength of Blood" },
+                            { "type" : "p",                                                     "content" : "Your curse does not come without its benefits—strength and charm are but the beginning." },
+                            { "type" : "div",       "className" : "indent",                     "content" : [
+                                { "type" : "span",  "className" : "text-label",                 "content" : "Ageless. " },
+                                "You don't age and are immune to disease, and you don't need to eat, drink, or breathe."
+                            ]},
+                            { "type" : "div",       "className" : "indent",                     "content" : [
+                                { "type" : "span",  "className" : "text-label",                 "content" : "Charming. " },
+                                "You gain proficiency in two of the following skills of your choice. If you are already proficient in a skill, you gain expertise in it instead: Deception, Intimidation, Performance, Persuasion."
+                            ]},
+                            { "type" : "div",       "className" : "indent",                     "content" : [
+                                { "type" : "span",  "className" : "text-label",                 "content" : "Darkvision. " },
+                                "You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray."
+                            ]},
+                            { "type" : "div",       "className" : "indent",                     "content" : [
+                                { "type" : "span",  "className" : "text-label",                 "content" : "Hungering Claws. " },
+                                "You can roll a d6 in place of the normal damage of your Unarmed Strike."
+                            ]},
+                            { "type" : "div",       "className" : "indent",                     "content" : [
+                                { "type" : "span",  "className" : "text-label",                 "content" : "Regeneration. " },
+                                "You regain all lost Hit Points when you finish a Short Rest."
+                            ]},
+                            { "type" : "div",       "className" : "indent",                     "content" : [
+                                { "type" : "span",  "className" : "text-label",                 "content" : "Unarmored Defense. " },
+                                "While you are not wearing any armor, your armor class equals 10 + your Dexterity modifier + your Constitution modifier. You can use a shield and still gain this benefit."
+                            ]}
+                        ]}
+                    ]
+                }
+            ]},
+            { "type" :      "div",  "className" : "class-level",    "id" : "vampire-level-2",   "content" : [
+                {
+                    "type" :        "div",
+                    "className" :   "is-flex-grow-1",
+                    "content" : [
+                        { "type" : "div",           "className" : "class-feature-container",    "id" : "vampire-blood-sacrifice", "content" : [
+                            { "type" : "div",       "className" : "class-feature-header",       "content" : "Level 2: Blood Sacrifice" },
+                            { "type" : "p",                                                     "content" : "Whenever you consume Hit Dice, roll them and add your Constitution modifier once for each rolled die. You regain Hit Points equal to the result." },
+                            { "type" : "p",         "className" : "indent",                     "content" : "Additionally, as a Bonus Action on your turn, you can consume a number of Hit Dice up to your Proficiency Bonus. You can't consume Hit Dice you don't have, and consuming a Hit Die expends it." }
+                        ]},
+                        { "type" : "div",           "className" : "class-feature-container",    "id" : "vampire-sanguine-mutations", "content" : [
+                            { "type" : "div",       "className" : "class-feature-header",       "content" : "Level 2: Sanguine Mutations" },
+                            { "type" : "p",                                                     "content" : "You can use the blood you drink to fuel dark powers. You gain two mutations of your choice." },
+                            { "type" : "div",       "className" : "indent",                     "content" : [
+                                { "type" : "span",  "className" : "text-label",                 "content" : "Prerequisites. " },
+                                "If a mutation has a prerequisite, you must meet it to learn that mutation."
+                            ]},
+                            { "type" : "div",       "className" : "indent",                     "content" : [
+                                { "type" : "span",  "className" : "text-label",                 "content" : "Replacing and Gaining Mutations. " },
+                                "Whenever you gain a Vampire level, you can replace one of your mutations with another one for which you qualify."
+                            ]},
+                            { "type" : "p",         "className" : "indent",                     "content" : "When you gain certain Vampire levels, you gain more mutations of your choice, as shown in the Mutations column of the Vampire Features table." },
+                            { "type" : "p",         "className" : "indent",                     "content" : "You can't pick the same mutation more than once unless its description says otherwise, and you can't replace a mutation if it's a prerequisite for another mutation that you have." },
+                            { "type" : "div", "className" : "grid classButtons",     "content" : [
+                                { "type" : "a", "className" : "cell button class-button", "content" : "Sanguine Mutation Options",  "attributes" : { "href" : "/classes/vampire/sanguine-mutations.html" } }
+                            ]}
+                        ]}
+                    ]
+                }
+            ]},
+            { "type" :      "div",  "className" : "class-level",    "id" : "vampire-level-3",   "content" : [
+                {
+                    "type" :        "div",
+                    "className" :   "is-flex-grow-1",
+                    "content" : [
+                        { "type" : "div",           "className" : "class-feature-container",    "id" : "vampire-subclass",  "content" : [
+                            { "type" : "div",       "className" : "class-feature-header",       "content" : "Level 3: Vampire Subclass" },
+                            "You gain a Vampire subclass of your choice. A subclass is a specialization that grants you features at certain Vampire levels. For the rest of your career, you gain each of your subclass's features that are of your Vampire level or lower.",
+                            { "type" : "div", "className" : "grid classButtons",     "content" : [
+                                { "type" : "a", "className" : "cell button class-button", "content" : "Bloodmorph",  "attributes" : { "href" : "/classes/vampire/bloodmorph.html" } },
+                                { "type" : "a", "className" : "cell button class-button", "content" : "Sovereign",   "attributes" : { "href" : "/classes/vampire/sovereign.html" } },
+                                { "type" : "a", "className" : "cell button class-button", "content" : "Veincaller",  "attributes" : { "href" : "/classes/vampire/veincaller.html" } }
+                            ]}
+                        ]},
+                        { "type" : "div",           "className" : "class-feature-container",    "id" : "vampire-mesmerize", "content" : [
+                            { "type" : "div",       "className" : "class-feature-header",       "content" : "Level 3: Mesmerize" },
+                            "Your words have an otherworldly power. You can cast ",
+                            { "type" : "a", "content" : "Charm Person", "attributes" : { "href" : "http://dnd2024.wikidot.com/spell:charm-person", "target" : "_blank" } },
+                            " without expending a spell slot.",
+                            { "type" : "p",         "className" : "indent",                     "content" : "You can use this feature a number of times equal to your Charisma modifier (minimum of once), and you regain all expended uses when you finish a Long Rest. Charisma is your spellcasting ability for this spell." }
+                        ]}
+                    ]
+                }
+            ]},
+            { "type" :      "div",  "className" : "class-level",    "id" : "vampire-level-4",   "content" : [
+                {
+                    "type" :        "div",
+                    "className" :   "is-flex-grow-1",
+                    "content" : [
+                        { "type" : "div",           "className" : "class-feature-container",    "id" : "vampire-asi",  "content" : [
+                            { "type" : "div",       "className" : "class-feature-header",       "content" : "Level 4: Ability Score Improvement" },
+                            "You gain the ",
+                            { "type" : "a", "content" : "Ability Score Improvement", "attributes" : { "href" : "http://dnd2024.wikidot.com/feat:ability-score-improvement", "target" : "_blank" } },
+                            " feat or another feat of your choice for which you qualify. You gain this feature again at Vampire levels 8, 12, and 16."
+                        ]}
+                    ]
+                }
+            ]},
+            { "type" :      "div",  "className" : "class-level",    "id" : "vampire-level-5",   "content" : [
+                {
+                    "type" :        "div",
+                    "className" :   "is-flex-grow-1",
+                    "content" : [
+                        { "type" : "div",           "className" : "class-feature-container",    "id" : "vampire-extra-attack",  "content" : [
+                            { "type" : "div",       "className" : "class-feature-header",       "content" : "Level 5: Extra Attack" },
+                            "You can now attack twice instead of once whenever you take the Attack action on your turn."
+                        ]},
+                        { "type" : "div",           "className" : "class-feature-container",    "id" : "vampire-vampiric-senses",  "content" : [
+                            { "type" : "div",       "className" : "class-feature-header",       "content" : "Level 5: Vampiric Senses" },
+                            "Your senses have honed in on the one thing that keeps you alive: blood. You can see all blooded creatures within 30 feet that aren't behind Total Cover, even if you have the Blinded condition or are in Darkness. Moreover, in that range, you can see blooded creatures that have the Invisible condition.",
+                            { "type" : "p",         "className" : "indent",                     "content" : "Additionally, you have advantage on Wisdom (Survival) checks you make to track blooded creatures." }
+                        ]}
+                    ]
+                }
+            ]},
+            { "type" :      "div",  "className" : "class-level",    "id" : "vampire-level-6",   "content" : [
+                {
+                    "type" :        "div",
+                    "className" :   "is-flex-grow-1",
+                    "content" : [
+                        { "type" : "div",           "className" : "class-feature-container",    "id" : "vampire-vicious-strikes",  "content" : [
+                            { "type" : "div",       "className" : "class-feature-header",       "content" : "Level 6: Vicious Strikes" },
+                            "Whenever you deal damage with your Unarmed strike, it can deal your choice of Necrotic damage or its normal damage type."
+                        ]}
+                    ]
+                }
+            ]},
+            { "type" :      "div",  "className" : "class-level",    "id" : "vampire-level-10",  "content" : [
+                {
+                    "type" :        "div",
+                    "className" :   "is-flex-grow-1",
+                    "content" : [
+                        { "type" : "div",           "className" : "class-feature-container",    "id" : "vampire-siphon-life",  "content" : [
+                            { "type" : "div",       "className" : "class-feature-header",       "content" : "Level 10: Siphon Life" },
+                            "Your ability to drain the life of others extends even beyond blood. Whenever you deal Necrotic damage, you may regain a number of Hit Points equal to the Necrotic damage dealt.",
+                            { "type" : "p",         "className" : "indent",                     "content" : "You can use this feature a number of times equal to your Proficiency bonus (minimum of once). You regain all expended uses when you finish a Long Rest." }
+                        ]}
+                    ]
+                }
+            ]},
+            { "type" :      "div",  "className" : "class-level",    "id" : "vampire-level-13",  "content" : [
+                {
+                    "type" :        "div",
+                    "className" :   "is-flex-grow-1",
+                    "content" : [
+                        { "type" : "div",           "className" : "class-feature-container",    "id" : "vampire-ravenous-strikes",  "content" : [
+                            { "type" : "div",       "className" : "class-feature-header",       "content" : "Level 13: Ravenous Strikes" },
+                            "You can roll a d10 in place of the normal damage of your Unarmed Strike.",
+                            { "type" : "p",         "className" : "indent",                     "content" : "Additionally, you can use your Feed feature on creatures that aren't Grappled." }
+                        ]}
+                    ]
+                }
+            ]},
+            { "type" :      "div",  "className" : "class-level",    "id" : "vampire-level-14",  "content" : [
+                {
+                    "type" :        "div",
+                    "className" :   "is-flex-grow-1",
+                    "content" : [
+                        { "type" : "div",           "className" : "class-feature-container",    "id" : "vampire-regenerating-form",  "content" : [
+                            { "type" : "div",       "className" : "class-feature-header",       "content" : "Level 14: Regenerating Form" },
+                            "At the start of each of your turns, if you haven't taken Radiant damage since your last turn, you gain a number of Temporary Hit Points equal to your Vampire level."
+                        ]}
+                    ]
+                }
+            ]},
+            { "type" :      "div",  "className" : "class-level",    "id" : "vampire-level-19",  "content" : [
+                {
+                    "type" :        "div",
+                    "className" :   "is-flex-grow-1",
+                    "content" : [
+                        { "type" : "div",           "className" : "class-feature-container",    "id" : "vampire-epic-boon",  "content" : [
+                            { "type" : "div",       "className" : "class-feature-header",       "content" : "Level 19: Epic Boon" },
+                            "You gain an ",
+                            { "type" : "a", "content" : "Epic Boon", "attributes" : { "href" : "http://dnd2024.wikidot.com/feat:all", "target" : "_blank" } },
+                            " or another feat of your choice for which you qualify."
+                        ]}
+                    ]
+                }
+            ]},
+            { "type" :      "div",  "className" : "class-level",    "id" : "vampire-level-20",  "content" : [
+                {
+                    "type" :        "div",
+                    "className" :   "is-flex-grow-1",
+                    "content" : [
+                        { "type" : "div",           "className" : "class-feature-container",    "id" : "vampire-immortal",  "content" : [
+                            { "type" : "div",       "className" : "class-feature-header",       "content" : "Level 20: Immortal" },
+                            "At the start of each of your turns, if you haven't taken Radiant damage since your last turn and have fewer Hit Points than your Vampire level, you gain hit points equal to your Vampire level.",
+                            { "type" : "p",         "className" : "indent",                     "content" : "Additionally, your Constitution score increases by 4, to a maximum of 25." }
+                        ]}
+                    ]
+                }
+            ]}
+        ]
+    }
+}

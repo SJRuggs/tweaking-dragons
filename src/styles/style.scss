@@ -1,80 +1,14 @@
-/* COLORS */
-:root           {
-    --color-primary-h: 0;
-    --color-primary-s: 0%;
-    --color-primary-l: 100%;
-
-    --color-secondary-h: 0;
-    --color-secondary-s: 0%;
-    --color-secondary-l: 100%;
-
-    --color-link-h: 233;
-    --color-link-s: 100%;
-    --color-link-l: 50%;
-
-    --color-primary:    hsl(var(--color-primary-h),     var(--color-primary-s),     var(--color-primary-l));
-    --color-secondary:  hsl(var(--color-secondary-h),   var(--color-secondary-s),   var(--color-secondary-l));
-    --color-link:       hsl(var(--color-link-h),        var(--color-link-s),        var(--color-link-l));
-    --color-text:       #fff;
-}
-.theme-vampire  {
-    --color-primary-h: 0;
-    --color-primary-s: 100%;
-    --color-primary-l: 50%;
-
-    --color-secondary-h: 0;
-    --color-secondary-s: 100%;
-    --color-secondary-l: 30%;
-
-    --color-link-h: 0;
-    --color-link-s: 100%;
-    --color-link-l: 50%;
-
-    --color-link-hover-h: 0;
-    --color-link-hover-s: 0%;
-    --color-link-hover-l: 100%;
-
-    --color-primary:    hsl(var(--color-primary-h),     var(--color-primary-s),     var(--color-primary-l));
-    --color-secondary:  hsl(var(--color-secondary-h),   var(--color-secondary-s),   var(--color-secondary-l));
-    --color-link:       hsl(var(--color-link-h),        var(--color-link-s),        var(--color-link-l));
-    --color-link-hover: hsl(var(--color-link-hover-h),  var(--color-link-hover-s),  var(--color-link-hover-l));
-    --color-header:     #fff;
-    --color-text:       #ddd;
-}
-:root {
-    --bulma-primary-h:  var(--color-primary-h);
-    --bulma-primary-s:  var(--color-primary-s);
-    --bulma-primary-l:  var(--color-primary-l);
-    --bulma-info-h:     var(--color-secondary-h);
-    --bulma-info-s:     var(--color-secondary-s);
-    --bulma-info-l:     var(--color-secondary-l);
-}
-body    { color: var(--color-text) !important; }
-a       { color: var(--color-link) !important; }
-a:hover { color: var(--color-link-hover) !important; }
-
-
-
-
-
 /* TYPOGRAPHY */
-.border-bottom  { border-bottom: 3px solid var(--color-primary) !important; }
-.header         { font-weight: bold;    color: var(--color-primary); padding-top: 0.5rem; }
-.header-secondary       { @extend .header;      color: var(--color-header); }
-.size-1 { font-size: 3rem;      @extend .header; }
-.size-2 { font-size: 2.5rem;    @extend .header; }
-.size-3 { font-size: 2rem;      @extend .header; }
-.size-4 { font-size: 1.5rem;    @extend .header-secondary; }
-.size-5 { font-size: 1.25rem;   @extend .header-secondary; }
-
-
+.header { font-weight: bold;    padding-top: 0.5rem;    }
+.size-1 { font-size: 3rem;      @extend .header;        }
+.size-2 { font-size: 2.5rem;    @extend .header;        }
+.size-3 { font-size: 2rem;      @extend .header;        }
+.size-4 { font-size: 1.5rem;    @extend .header;        }
+.size-5 { font-size: 1.25rem;   @extend .header;        }
 
 
 
 /* TABLES */
-.class-table-container, 
-.core-table-container,
-.onboarding-container { @extend .padded-container; }
 .class-table-level, 
 .class-table-proficiency-bonus, 
 .class-table-resource {
@@ -93,97 +27,55 @@ a:hover { color: var(--color-link-hover) !important; }
     text-align: left !important;   
     width: auto !important;
 }
+th, td { padding: 0.25rem 0.5rem !important; }
 .class-table-body > tr              { cursor: pointer; }
 .table-extra-header > th            { border-bottom:    0px !important; padding-bottom: 0px !important; }
 .table-extra-header ~ tr > th       { padding-top:      0px !important; }
-.class-table-body, .core-table-body { border-top:       3px solid var(--color-primary) !important; }
 .class-table-title                  { @extend .size-3; }
-.core-table-title                   { @extend .size-3; }
-.core-table-title                   { @extend .size-3; }
+.core-table-title                   { @extend .size-4; }
 .titleHeader                        { @extend .size-1; }
 
 
 
 
 
-/* HEADERS */
-.onboarding-header      { @extend .size-3;              @extend .border-bottom; }
-.level-divider          { @extend .horizontal-divider;  margin-top: 2rem;}
-.class-feature-header   { @extend .size-3;              padding-top: 0;}
-.class-feature-container + .class-feature-container { margin-top: 2rem; }
-.class-level { 
+/* HEADERS AND DIVIDERS */
+.class-feature-container    { margin-top: 2rem; }
+.onboarding-header          { @extend .size-3;  }
+.class-feature-header       { @extend .size-4;  padding-top: 0; }
+.class-features-header      { @extend .size-3;  margin-bottom: 0.25rem; }
+.divider {
     display: flex;
-    padding-top: 1rem;
-    align-items: stretch; 
-    @extend .padded-container;
-}
-
-
-
-
-
-/* DIVIDERS */
-.vertical-divider {
-    @extend .size-5;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    min-height: 100%;
-    position: relative;
-}
-.vertical-divider:not(:empty)::before,
-.vertical-divider:not(:empty)::after {
-    content: '';
-    width: 5px;
-    flex: 1;
-    background: var(--color-primary);
-    border-radius: 2.5px;
-}
-.vertical-divider:not(:empty)::before { margin-bottom: 15px; }
-.vertical-divider:not(:empty)::after  { margin-top: 15px; }
-.vertical-divider:empty::before {
-    content: '';
-    width: 5px;
-    height: 100%;
-    background: var(--color-primary);
-    border-radius: 2.5px;
-}
-.horizontal-divider {
-    @extend .size-4;
-    display: flex;
-    flex-direction: row;
     align-items: center;
     min-width: 100%;
     position: relative;
+    padding-top: 2rem;
 }
-.horizontal-divider:not(:empty)::before,
-.horizontal-divider:not(:empty)::after {
-    content: '';
+.divider-bar {
     height: 5px;
     flex: 1;
-    background: var(--color-primary);
     border-radius: 2.5px;
+    margin: 0;
 }
-.horizontal-divider:not(:empty)::before { margin-right: 15px; }
-.horizontal-divider:not(:empty)::after  { margin-left: 15px; }
-.horizontal-divider:empty::before {
-    content: '';
-    height: 5px;
-    width: 100%;
-    background: var(--color-primary);
-    border-radius: 2.5px;
+.divider-label {
+    width: 120px;
+    text-align: center;
+    @extend .size-4;
+    padding: 0;
 }
+
 
 
 
 
 /* CONTENT */
-.padded-container   { padding: 2rem !important; }
-.subclasses         { padding: 2rem 0 !important; }
-.indent             { text-indent: 1.5rem; }
-.italic             { font-style: italic; }
-.bold               { font-weight: bold; }
-ul li               { margin-top: 0.5rem; }
+.classButtons,
+.padded-container       { padding: 1rem 0 !important; }
+.description            { padding-bottom: 2rem; }
+.indent                 { text-indent: 1.5rem; }
+.italic                 { font-style: italic; }
+.bold                   { font-weight: bold; }
+ul li                   { margin-top: 0.5rem; }
 ul {
     list-style-type: disc !important;
     margin-left: 1.5rem !important;
@@ -191,13 +83,30 @@ ul {
     padding-bottom: 0.5rem !important;
 }
 .text-label { 
-    color: var(--color-header);
     font-weight: bold;
     font-style: italic;
 }
 .is-flex > .is-flex-grow-1 {
-  flex: 1 1 0%;
-  min-width: 0;
+    flex: 1 1 0%;
+    min-width: 0;
+}
+
+
+
+
+
+/* MENU */
+.menu               { @extend .desktop; }
+.menu-list          { margin: 0 !important; padding-bottom: 3rem !important; }
+.menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    width: calc((100vw - 960px) / 2);
+    padding: 3rem;
 }
 
 
@@ -205,6 +114,7 @@ ul {
 
 
 // /* RESPONSIVE STYLES */
+.container { max-width: 960px !important;}
 @media screen and (min-width: 769px) {
     .mobile { display: none; }
 }
@@ -214,11 +124,12 @@ ul {
     .mobile-column      { flex-direction: column !important; }
     .core-table-left    { white-space: normal !important; }
     .padded-container   { padding: 1rem 0 !important; }
-    th     { padding: 0.25rem !important; }
-    td     { padding: 0.25rem !important; }
-    .size-1 { font-size: 1.4rem;      @extend .header; }
+    .divider-label      { width: 80px; }
+    th      { padding: 0.25rem !important; }
+    td      { padding: 0.25rem !important; }
+    .size-1 { font-size: 1.4rem;    @extend .header; }
     .size-2 { font-size: 1.3rem;    @extend .header; }
-    .size-3 { font-size: 1.2rem;      @extend .header; }
-    .size-4 { font-size: 1.1rem;    @extend .header-secondary; }
-    .size-5 { font-size: 1rem;   @extend .header-secondary; }
+    .size-3 { font-size: 1.2rem;    @extend .header; }
+    .size-4 { font-size: 1.1rem;    @extend .header; }
+    .size-5 { font-size: 1rem;      @extend .header; }
 }
