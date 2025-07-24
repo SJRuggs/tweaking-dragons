@@ -35,7 +35,7 @@ async function getSources() {
             else selector.split(',').map(s => s.trim()).forEach(singleSelector => 
                 styles.sheet.insertRule(`.generated-${id} ${singleSelector} { ${rule} }`, styles.sheet.cssRules.length));
         });
-        console.log(`data "${id}" loaded:`, data[id]);
+        console.log(`${id} loaded:`, data[id]);
     }
 }
 
@@ -68,12 +68,12 @@ function generateClass(src) {
     const menu =        makeSection('menu');
     const title =       makeSection('title');
     const classTable =  makeSection('classTable');
-    const onboarding =  makeSection('onboarding');
     const levels =      makeSection('levels');
     container = createElement( 'div', 
         { className: 'container section is-flex is-flex-direction-column', style: { 'gap': '2rem' } }, 
-        [ title, classTable, onboarding, levels, menu ]
+        [ title, classTable, levels, menu ]
     );
+    console.log(`${src} generated:`, container);
     return container;
 }
 

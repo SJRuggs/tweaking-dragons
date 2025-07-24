@@ -5,7 +5,7 @@
         { "selector" : "--color-3",     "rule" : "#fff" },
         {
             "selector" : ".titleHeader, .class-table-title, .onboarding-header, .class-features-header, .class-feature-header, .menu-label, .class-button",
-            "rule" : "color: var(--color-1); font-weight: bold;"
+            "rule" : "color: var(--color-1); font-weight: bold"
         },
         {
             "selector" : ".class-button:hover",
@@ -39,13 +39,13 @@
     "menu" : { "type" : "aside", "className" : "menu", "content" : [
         { "type" : "p", "content" : "The Vampire", "className" : "menu-label" },
         { "type" : "ul", "className" : "menu-list", "content" : [
-            { "type" : "a", "content" : "Class Table",          "goto" : "vampire-class-table" },
-            { "type" : "a", "content" : "Becoming a Vampire",   "goto" : "vampire-onboarding" },
+            { "type" : "a", "content" : "Class Table",          "goto" : "root" },
             { "type" : "a", "content" : "Class Features",       "goto" : "vampire-levels" }
         ]},
         { "type" : "p", "content" : "Resources", "className" : "menu-label" },
         { "type" : "ul", "className" : "menu-list", "content" : [
-            { "type" : "a", "content" : "Sanguine Mutations",   "attributes" : { "href": "/classes/vampire/sanguine-mutations.html" } }
+            { "type" : "a", "content" : "Sanguine Mutations",   "attributes" : { "href": "/classes/vampire/sanguine-mutations.html" } },
+            { "type" : "a", "content" : "Gallery",  "id" : "vampire-gallery" }
         ]},
         { "type" : "p", "content" : "Subclasses", "className" : "menu-label" },
         { "type" : "ul", "className" : "menu-list", "content" : [
@@ -56,7 +56,7 @@
     ]},
     "title" :  { "type" : "section", "id" : "vampire-title", "content" : [
         { "type" : "h1", "className" : "titleHeader", "content" : "The Vampire" },
-        { "type" : "p", "content" : "Vampires are cursed beings caught between life and death, sustained not by breath or flesh, but by stolen blood. They do not age, do not sleep, and do not die as mortals do. What they lose in warmth, they gain in power and hunger." }
+        { "type" : "p", "content" : "Vampires are cursed beings caught between life and death, sustained not by breath or flesh, but by stolen blood." }
     ]},
     "classTable" : {
         "type" :        "div",
@@ -309,124 +309,50 @@
             ]
         }
     },
-    "onboarding" : {
-        "type" :        "div",
-        "className" :   "onboarding-container",
-        "id" :          "vampire-onboarding",
-        "content" : [
-            { "type" : "div", "className" : "onboarding-header",    "content" : "Becoming A Vampire"  },
-            { "type" : "div", "className" : "size-5 subheader",     "content" : "As a Level 1 Character" },
-            {
-                "type" : "ul", "content" : [
-                    { "type" : "li", "content" : "Gain all the traits in the Core Vampire Traits table." },
-                    { "type" : "li", "content" : "Gain the Vampire's level 1 features, which are listed in the Vampire Features table." }
-                ]
-            },
-            { "type" : "div", "className" : "size-5 subheader",     "content" : "As a Multiclass Character" },
-            {
-                "type" : "ul", "content" : [
-                    { "type" : "li", "content" : "Gain the following traits from the Core Vampire Traits table: Hit Point Die." }
-                ]
-            },
-            {
-                "type" : "div",
-                "className" : "core-table-container",
-                "content" : [
-                    { "type" : "div", "className" : "core-table-title", "content" : "Core Traits" },
-                    {
-                        "type" :        "table",
-                        "id" :          "vampire-core-table",
-                        "className" :   "table is-striped is-fullwidth",
-                        "content" : [
-                            {
-                                "type" :        "thead",
-                                "className" :   "core-table-header",
-                                "content" : [
-                                    {
-                                        "type" :    "tr", 
-                                        "css" :     "display: none",
-                                        "content" : [
-                                            { "type" : "th", "className" : "core-table-left", "content" : "Feature" },
-                                            { "type" : "th", "className" : "core-table-right", "content" : "Description" }
-                                        ]
-                                    }
-                                ]
-                            },
-                            {
-                                "type" : "tbody",
-                                "className" : "core-table-body",
-                                "content" : [
-                                    {
-                                        "type" : "tr",
-                                        "content" : [
-                                            { "type" : "td", "className" : "core-table-left",     "content" : "Primary Ability", "css" : "font-weight: bold" },
-                                            { "type" : "td", "className" : "core-table-right",    "content" : "Strength and Charisma" }
-                                        ]
-                                    },
-                                    {
-                                        "type" : "tr",
-                                        "content" : [
-                                            { "type" : "td", "className" : "core-table-left",     "content" : "Hit Die", "css" : "font-weight: bold" },
-                                            { "type" : "td", "className" : "core-table-right",    "content" : "D8 per Vampire level" }
-                                        ]
-                                    },
-                                    {
-                                        "type" : "tr",
-                                        "content" : [
-                                            { "type" : "td", "className" : "core-table-left",     "content" : "Saving Throws", "css" : "font-weight: bold" },
-                                            { "type" : "td", "className" : "core-table-right",    "content" : "Constitution and Charisma" }
-                                        ]
-                                    },
-                                    {
-                                        "type" : "tr",
-                                        "content" : [
-                                            { "type" : "td", "className" : "core-table-left",     "content" : "Skill Proficiencies", "css" : "font-weight: bold" },
-                                            { 
-                                                "type" : "td", 
-                                                "className" : "core-table-right",
-                                                "content" : [
-                                                    { "type" : "span", "content" : "Choose 2:", "css" : "font-weight: bold; font-style: italic; padding-right: 0.5em;" },
-                                                    "Acrobatics, Arcana, Deception, History, Insight, Intimidation, Persuasion, Performance, and Stealth"
-                                                ]
-                                            }
-                                        ]
-                                    },
-                                    {
-                                        "type" : "tr",
-                                        "content" : [
-                                            { "type" : "td", "className" : "core-table-left",     "content" : "Weapon Proficiencies", "css" : "font-weight: bold" },
-                                            { "type" : "td", "className" : "core-table-right",    "content" : "Simple Weapons" }
-                                        ]
-                                    },
-                                    {
-                                        "type" : "tr",
-                                        "content" : [
-                                            { "type" : "td", "className" : "core-table-left",     "content" : "Starting Equipment", "css" : "font-weight: bold" },
-                                            { 
-                                                "type" : "td",
-                                                "className" : "core-table-right",
-                                                "content" : [
-                                                    { "type" : "span", "content" : "Choose A or B:", "css" : "font-weight: bold; font-style: italic; padding-right: 0.5em;" },
-                                                    "(A) Rapier, two daggers, scholar's pack, and 5 GP; or (B) 70 GP"
-                                                ]
-                                            }
-                                        ]
-                                    }
-                                ]
-                            }
-                        ]
-                    }
-                ]
-            }
-        ]
-    },
     "levels" :{
         "type" :        "div",
         "className" :   "levels-container",
         "id" :          "vampire-levels",
         "content" : [
             { "type" :      "div",  "className" : "class-features-header",         "content" : "Vampire Class Features" },
-            "As a Vampire, you gain the following class features when you reach the specified Vampire levels. These features are listed in the Vampire Features table.",
+            "As a Vampire, you gain the following class features when you reach the specified Vampire levels.",
+            { "type" :      "div",  "className" : "subheader",  "content" : "Hit Points" },
+            { "type" :      "div",  "content" : [
+                { "type" :  "span", "className" : "text-label", "content" : "Hit Dice: " },
+                "1d8 per Vampire level"
+            ]},
+            { "type" :      "div",  "content" : [
+                { "type" :  "span", "className" : "text-label", "content" : "Hit Points at 1st Level: " },
+                "8 + your Constitution modifier"
+            ]},
+            { "type" :      "div",  "content" : [
+                { "type" :  "span", "className" : "text-label", "content" : "Hit Points at Higher Levels: " },
+                "1d8 (or 5) + your Constitution modifier per Vampire level after 1st"
+            ]},
+            { "type" :      "div",  "className" : "subheader",                      "content" : "Proficiencies" },
+            { "type" :      "div",  "content" : [
+                { "type" :  "span", "className" : "text-label", "content" : "Weapons: " },
+                "Simple weapons"
+            ]},
+            { "type" :      "div",  "content" : [
+                { "type" :  "span", "className" : "text-label", "content" : "Saving Throws: " },
+                "Constitution, Charisma"
+            ]},
+            { "type" :      "div",  "content" : [
+                { "type" :  "span", "className" : "text-label", "content" : "Skills: " },
+                "Choose two from Acrobatics, Arcana, Deception, History, Insight, Intimidation, Persuasion, Performance, and Stealth"
+            ]},
+            { "type" :      "div",  "className" : "subheader",                      "content" : "Equipment" },
+            "In addition to the equipment granted by your background, you start with (A) a rapier, two daggers, a scholar's pack and 4 GP; or (B) 70 GP.",
+            { "type" :      "div",  "className" : "subheader",                      "content" : "Multiclassing" },
+            { "type" :      "div",  "content" : [
+                { "type" :  "span", "className" : "text-label", "content" : "Requirements: " },
+                "You must have a Charisma score and a Strength score of 13 or higher to multiclass in or out of this class."
+            ]},
+            { "type" :      "div",  "content" : [
+                { "type" :  "span", "className" : "text-label", "content" : "Proficiencies: " },
+                "Simple Weapons"
+            ]},
             { "type" :      "div",  "className" : "class-level",    "id" : "vampire-level-1",   "content" : [
                 {
                     "type" :        "div",
@@ -469,7 +395,7 @@
                             ]},
                             { "type" : "div",       "className" : "indent",                     "content" : [
                                 { "type" : "span",  "className" : "text-label",                 "content" : "Undead. " },
-                                "You are no longer a humanoid, but an undead."
+                                "You are Undead instead of Humanoid."
                             ]},
                             { "type" : "div",       "className" : "indent",                     "content" : [
                                 { "type" : "span",  "className" : "text-label",                 "content" : "Uninvited. " },
@@ -530,7 +456,7 @@
                             ]},
                             { "type" : "p",         "className" : "indent",                     "content" : "When you gain certain Vampire levels, you gain more mutations of your choice, as shown in the Mutations column of the Vampire Features table." },
                             { "type" : "p",         "className" : "indent",                     "content" : "You can't pick the same mutation more than once unless its description says otherwise, and you can't replace a mutation if it's a prerequisite for another mutation that you have." },
-                            { "type" : "div", "className" : "grid classButtons",     "content" : [
+                            { "type" : "div", "className" : "grid class-buttons",     "content" : [
                                 { "type" : "a", "className" : "cell button class-button", "content" : "Sanguine Mutation Options",  "attributes" : { "href" : "/classes/vampire/sanguine-mutations.html" } }
                             ]}
                         ]}
@@ -545,7 +471,7 @@
                         { "type" : "div",           "className" : "class-feature-container",    "id" : "vampire-subclass",  "content" : [
                             { "type" : "div",       "className" : "class-feature-header",       "content" : "Level 3: Vampire Subclass" },
                             "You gain a Vampire subclass of your choice. A subclass is a specialization that grants you features at certain Vampire levels. For the rest of your career, you gain each of your subclass's features that are of your Vampire level or lower.",
-                            { "type" : "div", "className" : "grid classButtons",     "content" : [
+                            { "type" : "div", "className" : "grid class-buttons",     "content" : [
                                 { "type" : "a", "className" : "cell button class-button", "content" : "Bloodmorph",  "attributes" : { "href" : "/classes/vampire/bloodmorph.html" } },
                                 { "type" : "a", "className" : "cell button class-button", "content" : "Sovereign",   "attributes" : { "href" : "/classes/vampire/sovereign.html" } },
                                 { "type" : "a", "className" : "cell button class-button", "content" : "Veincaller",  "attributes" : { "href" : "/classes/vampire/veincaller.html" } }
