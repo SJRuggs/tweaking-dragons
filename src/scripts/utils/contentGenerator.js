@@ -84,16 +84,17 @@ function generateGallery(src) {
 
     let idx = 0;
 
-    const background = createElement('div',     { style: parseCSSProperties('background:rgba(0,0,0,0.7);position:fixed;top:0;left:0;width:100vw;height:100vh;z-index:1;'), className: 'gallery-background' });
-    const leftBtn = createElement('button',     { style: parseCSSProperties('font-size:2rem;background:none;border:none;cursor:pointer;'), id: `${src}-gallery-left` }, [createElement('i', { className: 'fa-solid fa-chevron-left' })]);
-    const rightBtn = createElement('button',    { style: parseCSSProperties('font-size:2rem;background:none;border:none;cursor:pointer;'), id: `${src}-gallery-right` }, [createElement('i', { className: 'fa-solid fa-chevron-right' })]);
-    const img = createElement('img',            { style: parseCSSProperties('width:60vw;height:90vh;object-fit:contain;border-radius:1rem;'), id: `${src}-gallery-image` });
-    const credit = createElement('span',        { style: parseCSSProperties('font-size:0.8rem;'), id: `${src}-gallery-credit`, className: "img-credit" }, [images[idx].credit]);
-    const imgBox = createElement('a',           { style: parseCSSProperties('flex:1;display:flex;justify-content:center;align-items:center;flex-direction:column;'), attributes: { href: images[idx].href, target: '_blank' } }, [credit, img]);
-    const galleryMenu = createElement('div',    { style: parseCSSProperties('display:flex;align-items:center;justify-content:center;gap:2rem;min-height:10rem;'), id: 'image-gallery-menu' }, [leftBtn, imgBox, rightBtn]);
-    const content = createElement('div',        { style: parseCSSProperties('z-index:2;position:relative;'), className: 'gallery-content' }, [galleryMenu]);
-    const closeButton = createElement('button', { style: parseCSSProperties('z-index:2;'), className: 'gallery-close-button modal-close is-large', attributes: { 'aria-label': 'Close' } });
-    const gallery = createElement('div',        { className: 'modal gallery' }, [background, content, closeButton]);
+    const background =  createElement('div',    { className: 'gallery-background' });
+    const leftBtn =     createElement('button', { className: 'gallery-button',  id: `${src}-gallery-left` },        [createElement('i', { className: 'fa-solid fa-chevron-left' })]);
+    const rightBtn =    createElement('button', { className: 'gallery-button',  id: `${src}-gallery-right` },       [createElement('i', { className: 'fa-solid fa-chevron-right' })]);
+    const img =         createElement('img',    { className: 'gallery-image',   id: `${src}-gallery-image` });
+    const imgLink =     createElement('a',      { className: 'gallery-link',                                        attributes: { href: images[idx].href, target: '_blank' } }, [img]);
+    const credit =      createElement('span',   { className: 'gallery-credit',  id: `${src}-gallery-credit` },      [images[idx].credit]);
+    const imgBox =      createElement('div',    { className: 'gallery-box',     id: `${src}-gallery-image-box` },   [credit, imgLink]);
+    const galleryMenu = createElement('div',    { className: 'gallery-menu',    id: `${src}-gallery-menu` },        [leftBtn, imgBox, rightBtn]);
+    const content =     createElement('div',    { className: 'gallery-content' }, [galleryMenu]);
+    const closeButton = createElement('button', { className: 'gallery-close-button modal-close is-large',           attributes: { 'aria-label': 'Close' } });
+    const gallery =     createElement('div',    { className: 'modal gallery' },                                     [background, content, closeButton]);
     
     img.src = images[0].src;
     document.body.appendChild(gallery);
@@ -124,7 +125,7 @@ function generateGallery(src) {
 
 
 
-export function generateContent(data) {
+function generateContent(data) {
     if (!data) {
         console.warn('Missing data for content generation');
         return createElement('span', { content: '' });

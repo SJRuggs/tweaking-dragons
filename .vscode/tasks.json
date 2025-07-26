@@ -7,7 +7,7 @@
 			"command": "sass",
 			"args": [
 				"--watch",
-				"src/styles/style.scss:src/styles/style.css"
+				"src/styles/style.scss:src/styles/universal-style.css"
 			],
 			"group": "build",
 	  "isBackground": true,
