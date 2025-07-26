@@ -7,9 +7,10 @@
 			"command": "sass",
 			"args": [
 				"--watch",
-				"src/styles/style.scss:src/styles/universal-style.css"
+				"src/styles/universal-style.scss:src/styles/universal-style.css"
 			],
 			"group": "build",
+			"auto" :true,
 	  "isBackground": true,
 	  "problemMatcher": []
 		}
