@@ -7,21 +7,17 @@
         <title>Tweaks</title>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-        <link rel="stylesheet" href="/src/styles/style.css">        
+        <link rel="stylesheet" href="/src/styles/universal-style.css">        
         <link rel="data" href="/data/sjruggs/class-vampire.json" data-id="vampire">
     </head>
     <body id="root">
-
-        <nav class="navbar desktop" role="navigation" aria-label="main navigation">
-            <div class="navbar-menu">
-                <div class="navbar-start">
-                <a class="navbar-item size-4" href="/classes/vampire/bloodmorph.html">Tweaking Dragons</a>
-                <a class="navbar-item">Home</a>
-                <a class="navbar-item">Classes</a>
-            </div>
-        </nav>
-
+        <div class="generate" gen-type="navbar"></div>
         <div class="generate" gen-type="class" src="vampire"></div>
+        <footer class="footer">
+            <div class="content has-text-centered">
+                <strong>Tweaking Dragons</strong> by <a href="https://github.com/sjruggs/tweaking-dragons">SJRuggs</a>
+            </div>
+        </footer>
     </body>
     <script type="module" src="/src/scripts/utils/contentGenerator.js"></script>
 </html>

@@ -1,0 +1,62 @@
+{
+    "cssRules" : "inherit:vampire",
+    "menu" : { "type" : "aside",    "className" : "menu",       "content" : [
+        { "type" : "p",             "className" : "menu-label", "content" : "Bloodmorph" },
+        { "type" : "ul",            "className" : "menu-list",  "content" : [
+            { "type" : "a",         "className" : "menu-item",  "content" : "Subclass Features",    "goto" : "root" }
+        ]},
+        { "type" : "p",             "className" : "menu-label", "content" : "Resources" },
+        { "type" : "ul",            "className" : "menu-list",  "content" : [
+            { "type" : "a",         "className" : "menu-item",  "content" : "The Vampire",          "attributes" : { "href": "/classes/vampire" } },
+            { "type" : "a",         "className" : "menu-item",  "content" : "Sanguine Mutations",   "attributes" : { "href": "/classes/vampire/sanguine-mutations" } },
+            { "type" : "a",         "className" : "menu-item",  "content" : "Gallery",              "id" : "bloodmorph-gallery-button" }
+        ]}
+    ]},
+    "features" : { "type" : "div",  "id" : "bloodmorph-features",               "content" : [
+        { "type" : "h1",            "className" : "titleHeader",                "content" : "Bloodmorph" },
+        { "type" : "p",             "content" : "Bloodmorphs, the most monstrous and vicious type of Vampire, are capable of using blood to transform their physical shape beyond a simple polymorph like a bat or a wolf—but into a monstrosity unlike any other." },
+        { "type" : "div",           "className" : "class-feature-container",    "content" :[
+            { "type" : "div",       "className" : "class-feature-header",       "content" : "Level 3: Monstrous Form" },
+            { "type" : "p",                                                     "content" : "As a Bonus Action on your turn, you can consume 1 Hit Die to transform into a vampiric beast for 1 hour. You determine the appearance of this form. You can speak, use equipment, and wear armor while in this form, and can revert to your normal form as a Bonus Action. You automatically revert to your normal form if you fall unconscious or die." },
+            { "type" : "div",       "className" : "indent",                     "content" : "While you are transformed, you gain the following features:" },
+            { "type" : "div",       "className" : "indent",                     "content" : [
+                { "type" : "span",  "className" : "text-label",                 "content" : "Vampiric Might. " },
+                "You have advantage on Strength checks and Strength saving throws, and you have a +1 bonus to melee damage rolls. This bonus increases to +2 at 11th level and to +3 at 17th level."
+            ]},
+            { "type" : "div",       "className" : "indent",                     "content" : [
+                { "type" : "span",  "className" : "text-label",                 "content" : "Obsidian Skin. " },
+                "You have Resistance to Bludgeoning, Piercing, and Slashing damage, provided you aren't already Vulnerable. Additionally, while you are not wearing armor, you have a +1 bonus to AC."
+            ]},
+            { "type" : "div",       "className" : "indent",                     "content" : [
+                { "type" : "span",  "className" : "text-label",                 "content" : "Bloodlust. " },
+                "If you start your turn with fewer Hit Dice than half your Hit Die maximum, you must succeed on a DC 8 Wisdom saving throw or move directly toward the nearest creature and attempt to Grapple that creature. If you succeed, you must then use your Feed feature on that creature."
+            ]},
+            { "type" : "div",       "className" : "indent",                     "content" : "If you're concentrating on a spell or are under an effect that prevents you from concentrating (such as the Barbarian's Rage feature), you automatically fail this saving throw."},
+            { "type" : "div",       "className" : "indent",                     "content" : "If you have your Extra Attack feature, you can choose whether to use it for this frenzied attack. If one or more creatures are equally near you, roll randomly to determine your target."},
+            { "type" : "div",       "className" : "indent",                     "content" : "Once you use your Feed feature, you regain control of yourself."}
+        ]},
+        { "type" : "div",           "className" : "class-feature-container",    "content" :[
+            { "type" : "div",       "className" : "class-feature-header",       "content" : "Level 7: Stalker's Prowess" },
+            "Your Speed increases by 10 feet, and you add 10 feet to your Long Jump distance and 3 feet to your High Jump distance. Your monstrous form also gains the following additional benefit.",
+            { "type" : "div",       "className" : "indent",                     "content" : [
+                { "type" : "span",  "className" : "text-label",                 "content" : "Bloodbound Strikes. " },
+                "Whenever you hit a creature with an Unarmed Strike, you may consume and roll 1 Hit Die (add your Constitution modifier) and deal additional Necrotic damage to the target equal to the result."
+            ]}
+        ]},
+        { "type" : "div",           "className" : "class-feature-container",    "content" :[
+            { "type" : "div",       "className" : "class-feature-header",       "content" : "Level 11: Drink Deep" },
+            "Whenever you drain Hit Dice while in your monstrous form, you drain an additional Hit Die."
+        ]},
+        { "type" : "div",           "className" : "class-feature-container",    "content" :[
+            { "type" : "div",       "className" : "class-feature-header",       "content" : "Level 17: Two Extra Attacks" },
+            "You can attack three times instead of once whenever you take the Attack action on your turn."
+        ]}
+    ]},
+    "gallery" : [
+        { 
+            "credit" : "Dettlaff: Higher Vampire by Lorenzo Mastroianni", 
+            "src": "/public/assets/images/bloodmorph.jpeg", 
+            "href": "https://www.artstation.com/lorenzomastroianni"
+        }
+    ]
+}

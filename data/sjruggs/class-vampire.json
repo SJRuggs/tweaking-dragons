@@ -4,7 +4,7 @@
         { "selector" : "--color-2",     "rule" : "#211" },
         { "selector" : "--color-3",     "rule" : "#fff" },
         {
-            "selector" : ".titleHeader, .class-table-title, .onboarding-header, .class-features-header, .class-feature-header, .menu-label, .class-button",
+            "selector" : ".titleHeader, .class-table-title, .onboarding-header, .class-features-header, .class-feature-header, .class-button",
             "rule" : "color: var(--color-1); font-weight: bold"
         },
         {
@@ -36,25 +36,25 @@
             "rule" : "background: var(--color-1);"
         }
     ],
-    "menu" : { "type" : "aside", "className" : "menu", "content" : [
-        { "type" : "p", "content" : "The Vampire", "className" : "menu-label" },
-        { "type" : "ul", "className" : "menu-list", "content" : [
-            { "type" : "a", "content" : "Class Table",          "goto" : "root" },
-            { "type" : "a", "content" : "Class Features",       "goto" : "vampire-levels" }
+    "menu" : [
+        { "type" : "label",     "content" : "The Vampire" },
+        { "type" : "list",      "content" : [
+            { "type" : "item",  "content" : "Class Table",           "goto" : "root" },
+            { "type" : "item",  "content" : "Class Features",        "goto" : "vampire-levels" }
         ]},
-        { "type" : "p", "content" : "Resources", "className" : "menu-label" },
-        { "type" : "ul", "className" : "menu-list", "content" : [
-            { "type" : "a", "content" : "Sanguine Mutations",   "attributes" : { "href": "/classes/vampire/sanguine-mutations.html" } },
-            { "type" : "a", "content" : "Gallery",  "id" : "vampire-gallery-button" }
+        { "type" : "label",     "content" : "Resources" },
+        { "type" : "list",      "content" : [
+            { "type" : "item",  "content" : "Sanguine Mutations",    "href": "/classes/vampire/sanguine-mutations" },
+            { "type" : "item",  "content" : "Gallery",               "id" : "vampire-gallery-button" }
         ]},
-        { "type" : "p", "content" : "Subclasses", "className" : "menu-label" },
-        { "type" : "ul", "className" : "menu-list", "content" : [
-            { "type" : "a", "content" : "Bloodmorph",   "attributes" : { "href": "/classes/vampire/bloodmorph.html" } },
-            { "type" : "a", "content" : "Sovereign",    "attributes" : { "href": "/classes/vampire/sovereign.html" } },
-            { "type" : "a", "content" : "Veincaller",   "attributes" : { "href": "/classes/vampire/veincaller.html" } }
+        { "type" : "label",     "content" : "Subclasses" },
+        { "type" : "list",      "content" : [
+            { "type" : "item",  "content" : "Bloodmorph",            "href": "/classes/vampire/bloodmorph" },
+            { "type" : "item",  "content" : "Sovereign",             "href": "/classes/vampire/sovereign" },
+            { "type" : "item",  "content" : "Veincaller",            "href": "/classes/vampire/veincaller" }
         ]}
-    ]},
-    "title" :  { "type" : "section", "id" : "vampire-title", "content" : [
+    ],
+    "title" : { "type" : "section", "id" : "vampire-title", "content" : [
         { "type" : "h1", "className" : "titleHeader", "content" : "The Vampire" },
         { "type" : "p", "content" : "Vampires are cursed beings caught between life and death, sustained not by breath or flesh, but by stolen blood." }
     ]},
@@ -457,7 +457,7 @@
                             { "type" : "p",         "className" : "indent",                     "content" : "When you gain certain Vampire levels, you gain more mutations of your choice, as shown in the Mutations column of the Vampire Features table." },
                             { "type" : "p",         "className" : "indent",                     "content" : "You can't pick the same mutation more than once unless its description says otherwise, and you can't replace a mutation if it's a prerequisite for another mutation that you have." },
                             { "type" : "div", "className" : "grid class-buttons",     "content" : [
-                                { "type" : "a", "className" : "cell button class-button", "content" : "Sanguine Mutation Options",  "attributes" : { "href" : "/classes/vampire/sanguine-mutations.html" } }
+                                { "type" : "a", "className" : "cell button class-button", "content" : "Sanguine Mutation Options",  "attributes" : { "href" : "/classes/vampire/sanguine-mutations" } }
                             ]}
                         ]}
                     ]
@@ -472,9 +472,9 @@
                             { "type" : "div",       "className" : "class-feature-header",       "content" : "Level 3: Vampire Subclass" },
                             "You gain a Vampire subclass of your choice. A subclass is a specialization that grants you features at certain Vampire levels. For the rest of your career, you gain each of your subclass's features that are of your Vampire level or lower.",
                             { "type" : "div", "className" : "grid class-buttons",     "content" : [
-                                { "type" : "a", "className" : "cell button class-button", "content" : "Bloodmorph",  "attributes" : { "href" : "/classes/vampire/bloodmorph.html" } },
-                                { "type" : "a", "className" : "cell button class-button", "content" : "Sovereign",   "attributes" : { "href" : "/classes/vampire/sovereign.html" } },
-                                { "type" : "a", "className" : "cell button class-button", "content" : "Veincaller",  "attributes" : { "href" : "/classes/vampire/veincaller.html" } }
+                                { "type" : "a", "className" : "cell button class-button", "content" : "Bloodmorph",  "attributes" : { "href" : "/classes/vampire/bloodmorph" } },
+                                { "type" : "a", "className" : "cell button class-button", "content" : "Sovereign",   "attributes" : { "href" : "/classes/vampire/sovereign" } },
+                                { "type" : "a", "className" : "cell button class-button", "content" : "Veincaller",  "attributes" : { "href" : "/classes/vampire/veincaller" } }
                             ]}
                         ]},
                         { "type" : "div",           "className" : "class-feature-container",    "id" : "vampire-mesmerize", "content" : [

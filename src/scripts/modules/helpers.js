@@ -91,39 +91,45 @@ export function createElement(tag, options = {}, children) {
     if (options.style)      Object.assign(element.style, options.style);
     if (options.attributes) Object.entries(options.attributes).forEach(([key, value]) => element.setAttribute(key, value));
     if (options.properties) Object.assign(element, options.properties);
+    if (options.goto) addScrollLink(element, options.goto);
     if (children) {
         children.forEach(child => {
             if (typeof child === 'string') element.appendChild(document.createTextNode(child));
             else if (child instanceof Node) element.appendChild(child);
         });
     }
-    if (options.goto) {
-        element.addEventListener('click', (event) => {
-            const offset = 30;
-            event.preventDefault();
-            event.stopPropagation();
-            let goto = options.goto;
-            let targetElement = document.getElementById(goto);
-            const parts = goto.split('-');
-            let num = parseInt(parts.pop());
-            const str = parts.join('-');
-            if (!targetElement && !isNaN(num) && num > 0) {
-                while (!targetElement && num > 0) {
-                    const nextElement = document.getElementById(`${str}-${num}`);
-                    if (nextElement) {
-                        targetElement = nextElement;
-                        goto = `${str}-${num}`;
-                        break;
-                    }
-                    num--;
-                }
-            }
-            if (targetElement) {
-                console.log(`Navigating to: #${goto}`);
-                const y = targetElement.getBoundingClientRect().top + window.pageYOffset - offset;
-                window.scrollTo({ top: y, behavior: 'smooth' });
-            }
-        });
-    }
     return element;
+}
+
+
+
+
+
+export function addScrollLink(element, targetId) {
+    element.addEventListener('click', (event) => {
+        const offset = 30;
+        event.preventDefault();
+        event.stopPropagation();
+        let goto = targetId;
+        let targetElement = document.getElementById(goto);
+        const parts = goto.split('-');
+        let num = parseInt(parts.pop());
+        const str = parts.join('-');
+        if (!targetElement && !isNaN(num) && num > 0) {
+            while (!targetElement && num > 0) {
+                const nextElement = document.getElementById(`${str}-${num}`);
+                if (nextElement) {
+                    targetElement = nextElement;
+                    goto = `${str}-${num}`;
+                    break;
+                }
+                num--;
+            }
+        }
+        if (targetElement) {
+            console.log(`Navigating to: #${goto}`);
+            const y = targetElement.getBoundingClientRect().top + window.pageYOffset - offset;
+            window.scrollTo({ top: y, behavior: 'smooth' });
+        }
+    });
 }
