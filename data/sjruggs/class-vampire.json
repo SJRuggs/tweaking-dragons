@@ -45,7 +45,7 @@
         { "type" : "p", "content" : "Resources", "className" : "menu-label" },
         { "type" : "ul", "className" : "menu-list", "content" : [
             { "type" : "a", "content" : "Sanguine Mutations",   "attributes" : { "href": "/classes/vampire/sanguine-mutations.html" } },
-            { "type" : "a", "content" : "Gallery",  "id" : "vampire-gallery" }
+            { "type" : "a", "content" : "Gallery",  "id" : "vampire-gallery-button" }
         ]},
         { "type" : "p", "content" : "Subclasses", "className" : "menu-label" },
         { "type" : "ul", "className" : "menu-list", "content" : [
@@ -309,7 +309,7 @@
             ]
         }
     },
-    "levels" :{
+    "levels" : {
         "type" :        "div",
         "className" :   "levels-container",
         "id" :          "vampire-levels",
@@ -596,5 +596,17 @@
                 }
             ]}
         ]
-    }
+    },
+    "gallery" : [
+        { 
+            "credit" : "Vlad by Naranbaatar Ganbold", 
+            "src": "https://cdna.artstation.com/p/assets/images/images/048/005/336/large/naranbaatar-ganbold-vlx.jpg?1648989001", 
+            "href": "https://www.artstation.com/artwork/xYe4WO"
+        },
+        { 
+            "credit" : "Vampire Portrait by Oliver Wetter", 
+            "src": "https://cdna.artstation.com/p/assets/images/images/000/614/686/large/oliver-wetter-vampire1-small.jpg?1428611070", 
+            "href": "https://www.artstation.com/artwork/03vK5"
+        }
+    ]
 }

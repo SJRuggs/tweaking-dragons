@@ -1,0 +1,17 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "shell",
+			"label": "Watch SCSS",
+			"command": "sass",
+			"args": [
+				"--watch",
+				"src/styles/style.scss:src/styles/style.css"
+			],
+			"group": "build",
+	  "isBackground": true,
+	  "problemMatcher": []
+		}
+	]
+}

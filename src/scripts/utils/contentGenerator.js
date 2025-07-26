@@ -1,10 +1,6 @@
 // Import helper functions from the helpers module
 import { fetchJSON, createElement, waitForDOM, parseCSSProperties} from '/src/scripts/modules/helpers.js';
 
-
-
-
-
 const data = {};
 const styles = document.createElement('style');
 document.head.appendChild(styles);
@@ -49,7 +45,7 @@ async function collectGeneratedFields() {
         element.classList.remove('generate');
         element.classList.add(`generated-${src}`);
         switch (element.getAttribute('gen-type')) {
-            case 'class' : element.appendChild(generateClass(src)); break;
+            case 'class' : generateClass(src, element); break;
         }
     }
 }
@@ -58,33 +54,76 @@ async function collectGeneratedFields() {
 
 
 
-function generateClass(src) {
-    let container;
-    const makeSection = key => {
+function generateClass(src, element) {
+    const section = key => {
         const div = createElement('div');
         div.append(generateContent(data[src][key]));
         return div;
     };
-    const menu =        makeSection('menu');
-    const title =       makeSection('title');
-    const classTable =  makeSection('classTable');
-    const levels =      makeSection('levels');
-    container = createElement( 'div', 
+    const menu =        section('menu');
+    const title =       section('title');
+    const classTable =  section('classTable');
+    const levels =      section('levels');
+    const container =   createElement('div', 
         { className: 'container section is-flex is-flex-direction-column', style: { 'gap': '2rem' } }, 
         [ title, classTable, levels, menu ]
     );
     console.log(`${src} generated:`, container);
-    return container;
+    element.appendChild(container);
+    generateGallery(src); // optional gallery generation
 }
 
 
 
 
 
-/**
- * Interprets and renders content based on its type
- * @param {Object} data - The content object with type and content properties
- */
+function generateGallery(src) {
+    const openButton = document.getElementById(`${src}-gallery-button`);
+    const images = data[src].gallery || [];
+    if (!images.length || !openButton) return;
+
+    let idx = 0;
+
+    const background = createElement('div',     { style: parseCSSProperties('background:rgba(0,0,0,0.7);position:fixed;top:0;left:0;width:100vw;height:100vh;z-index:1;'), className: 'gallery-background' });
+    const leftBtn = createElement('button',     { style: parseCSSProperties('font-size:2rem;background:none;border:none;cursor:pointer;'), id: `${src}-gallery-left` }, [createElement('i', { className: 'fa-solid fa-chevron-left' })]);
+    const rightBtn = createElement('button',    { style: parseCSSProperties('font-size:2rem;background:none;border:none;cursor:pointer;'), id: `${src}-gallery-right` }, [createElement('i', { className: 'fa-solid fa-chevron-right' })]);
+    const img = createElement('img',            { style: parseCSSProperties('width:60vw;height:90vh;object-fit:contain;border-radius:1rem;'), id: `${src}-gallery-image` });
+    const credit = createElement('span',        { style: parseCSSProperties('font-size:0.8rem;'), id: `${src}-gallery-credit`, className: "img-credit" }, [images[idx].credit]);
+    const imgBox = createElement('a',           { style: parseCSSProperties('flex:1;display:flex;justify-content:center;align-items:center;flex-direction:column;'), attributes: { href: images[idx].href, target: '_blank' } }, [credit, img]);
+    const galleryMenu = createElement('div',    { style: parseCSSProperties('display:flex;align-items:center;justify-content:center;gap:2rem;min-height:10rem;'), id: 'image-gallery-menu' }, [leftBtn, imgBox, rightBtn]);
+    const content = createElement('div',        { style: parseCSSProperties('z-index:2;position:relative;'), className: 'gallery-content' }, [galleryMenu]);
+    const closeButton = createElement('button', { style: parseCSSProperties('z-index:2;'), className: 'gallery-close-button modal-close is-large', attributes: { 'aria-label': 'Close' } });
+    const gallery = createElement('div',        { className: 'modal gallery' }, [background, content, closeButton]);
+    
+    img.src = images[0].src;
+    document.body.appendChild(gallery);
+
+    function openGallery()      { [gallery, background].forEach(el => el.classList.add('is-active'));    }
+    function closeGallery()     { [gallery, background].forEach(el => el.classList.remove('is-active')); }
+    function showImage(newIdx)  { 
+        idx = (newIdx + images.length) % images.length; 
+        img.src = images[idx].src;
+        credit.textContent = images[idx].credit;
+    }
+    function handleKey(e) {
+        if (!gallery.classList.contains('is-active')) return;
+        switch (e.key) {
+            case 'ArrowLeft':   showImage(idx - 1); break;
+            case 'ArrowRight':  showImage(idx + 1); break;
+            case 'Escape':      closeGallery();     break;
+        }
+    }
+
+    leftBtn.onclick = () =>     showImage(idx - 1);
+    rightBtn.onclick = () =>    showImage(idx + 1);
+    openButton.onclick = () =>  openGallery();
+    closeButton.onclick = () => closeGallery();
+    background.onclick = () =>  closeGallery();
+    window.addEventListener('keydown', handleKey);
+}
+
+
+
 export function generateContent(data) {
     if (!data) {
         console.warn('Missing data for content generation');
