@@ -1,17 +1,17 @@
 {
     "cssRules" : "inherit:vampire",
-    "menu" : { "type" : "aside",    "className" : "menu",       "content" : [
-        { "type" : "p",             "className" : "menu-label", "content" : "Bloodmorph" },
-        { "type" : "ul",            "className" : "menu-list",  "content" : [
-            { "type" : "a",         "className" : "menu-item",  "content" : "Subclass Features",    "goto" : "root" }
+    "menu" : [
+        { "type" : "label",     "content" : "Bloodmorph" },
+        { "type" : "list",      "content" : [
+            { "type" : "item",  "content" : "Subclass Features",    "goto" : "root" }
         ]},
-        { "type" : "p",             "className" : "menu-label", "content" : "Resources" },
-        { "type" : "ul",            "className" : "menu-list",  "content" : [
-            { "type" : "a",         "className" : "menu-item",  "content" : "The Vampire",          "attributes" : { "href": "/classes/vampire" } },
-            { "type" : "a",         "className" : "menu-item",  "content" : "Sanguine Mutations",   "attributes" : { "href": "/classes/vampire/sanguine-mutations" } },
-            { "type" : "a",         "className" : "menu-item",  "content" : "Gallery",              "id" : "bloodmorph-gallery-button" }
+        { "type" : "label",     "content" : "Resources" },
+        { "type" : "list",      "content" : [
+            { "type" : "item",  "content" : "The Vampire",          "href": "/classes/vampire" },
+            { "type" : "item",  "content" : "Sanguine Mutations",   "href": "/classes/vampire/sanguine-mutations" },
+            { "type" : "item",  "content" : "Gallery",              "id" : "bloodmorph-gallery-button" }
         ]}
-    ]},
+    ],
     "features" : { "type" : "div",  "id" : "bloodmorph-features",               "content" : [
         { "type" : "h1",            "className" : "titleHeader",                "content" : "Bloodmorph" },
         { "type" : "p",             "content" : "Bloodmorphs, the most monstrous and vicious type of Vampire, are capable of using blood to transform their physical shape beyond a simple polymorph like a bat or a wolf—but into a monstrosity unlike any other." },

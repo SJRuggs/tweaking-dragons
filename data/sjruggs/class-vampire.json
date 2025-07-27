@@ -39,19 +39,19 @@
     "menu" : [
         { "type" : "label",     "content" : "The Vampire" },
         { "type" : "list",      "content" : [
-            { "type" : "item",  "content" : "Class Table",           "goto" : "root" },
-            { "type" : "item",  "content" : "Class Features",        "goto" : "vampire-levels" }
+            { "type" : "item",  "content" : "Class Table",          "goto" : "root" },
+            { "type" : "item",  "content" : "Class Features",       "goto" : "vampire-levels" }
         ]},
         { "type" : "label",     "content" : "Resources" },
         { "type" : "list",      "content" : [
-            { "type" : "item",  "content" : "Sanguine Mutations",    "href": "/classes/vampire/sanguine-mutations" },
-            { "type" : "item",  "content" : "Gallery",               "id" : "vampire-gallery-button" }
+            { "type" : "item",  "content" : "Sanguine Mutations",   "href": "/classes/vampire/sanguine-mutations" },
+            { "type" : "item",  "content" : "Gallery",              "id" : "vampire-gallery-button" }
         ]},
         { "type" : "label",     "content" : "Subclasses" },
         { "type" : "list",      "content" : [
-            { "type" : "item",  "content" : "Bloodmorph",            "href": "/classes/vampire/bloodmorph" },
-            { "type" : "item",  "content" : "Sovereign",             "href": "/classes/vampire/sovereign" },
-            { "type" : "item",  "content" : "Veincaller",            "href": "/classes/vampire/veincaller" }
+            { "type" : "item",  "content" : "Bloodmorph",           "href": "/classes/vampire/bloodmorph" },
+            { "type" : "item",  "content" : "Sovereign",            "href": "/classes/vampire/sovereign" },
+            { "type" : "item",  "content" : "Veincaller",           "href": "/classes/vampire/veincaller" }
         ]}
     ],
     "title" : { "type" : "section", "id" : "vampire-title", "content" : [
@@ -600,12 +600,12 @@
     "gallery" : [
         { 
             "credit" : "Vlad by Naranbaatar Ganbold", 
-            "src": "https://cdna.artstation.com/p/assets/images/images/048/005/336/large/naranbaatar-ganbold-vlx.jpg?1648989001", 
+            "src": "/public/assets/images/vampire-ganbold.jpg", 
             "href": "https://www.artstation.com/artwork/xYe4WO"
         },
         { 
             "credit" : "Vampire Portrait by Oliver Wetter", 
-            "src": "https://cdna.artstation.com/p/assets/images/images/000/614/686/large/oliver-wetter-vampire1-small.jpg?1428611070", 
+            "src": "/public/assets/images/vampire-wetter.jpg", 
             "href": "https://www.artstation.com/artwork/03vK5"
         }
     ]
