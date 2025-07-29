@@ -1,0 +1,269 @@
+{
+    "cssRules" : "inherit:vampire",
+    "menu" : [
+        { "type" : "label",     "content" : "Veincaller" },
+        { "type" : "list",      "content" : [
+            { "type" : "item",  "content" : "Veincaller Features",    "goto" : "root" }
+        ]},
+        { "type" : "label",     "content" : "Resources" },
+        { "type" : "list",      "content" : [
+            { "type" : "item",  "content" : "The Vampire",          "href": "/classes/vampire" },
+            { "type" : "item",  "content" : "Sanguine Mutations",   "href": "/classes/vampire/sanguine-mutations" },
+            { "type" : "item",  "content" : "Gallery",              "id" : "veincaller-gallery-button" }
+        ]}
+    ],
+    "features" : { "type" : "div",  "id" : "veincaller-features",               "content" : [
+        { "type" : "h1",            "className" : "titleHeader",                "content" : "Veincaller" },
+        "Veincallers are the most mysterious and misunderstood type of Vampire, for their connection to blood goes beyond the physical. Unlike other Vampires, Veincallers cultivate dark magic with your blood before it even leaves your veins.",
+        { "type" : "div",           "className" : "feature-container",    "content" :[
+            { "type" : "div",       "className" : "feature-header",       "content" : "Level 3: Spellcasting" },
+            "You have learned to use the blood you steal to invoke spells.",
+            { "type" : "div",       "className" : "indent",                     "content" : [
+                { "type" : "span",  "className" : "text-label",                 "content" : "Cantrips. " },
+                "You know two cantrips of your choice from the Vampire spell list. Whenever you gain a Vampire level, you can replace one of these cantrips with another cantrip of your choice from the Vampire spell list.",
+                { "type" : "div",   "className" : "indent",                     "content" : "When you reach Vampire level 10, you learn another Veincaller cantrip of your choice."}
+            ]},
+            { "type" : "div",       "className" : "indent",                     "content" : [
+                { "type" : "span",  "className" : "text-label",                 "content" : "Spell Slots. " },
+                "The Veincaller Spellcasting table shows how many spell slots you have to cst your level 1+ spells. You regain all expended spell slots when you finish a Long Rest."
+            ]},
+            { "type" : "div",       "className" : "indent",                     "content" : [
+                { "type" : "span",  "className" : "text-label",                 "content" : "Prepared Spells of Level 1+. " },
+                "You prepare the list of level 1+ spells that are available to you to cast with this feature. To start, choose three level 1 spells from the Vampire spell list.",
+                { "type" : "div",   "className" : "indent",                     "content" : "The number of spells on your list increases as you gain Vampire levels, as shown in the Prepared Spells column of the Veincaller Spellcasting table. Whenever that number increases, choose additional spells from the Vampire spell list until the number of spells from the Vampire spell list matches the number on the table. The chosen spells must be of a level for which you have spell slots."}
+            ]},
+            { "type" : "div",       "className" : "indent",                     "content" : [
+                { "type" : "span",  "className" : "text-label",                 "content" : "Changing Your Prepared Spells. " },
+                "Whenever you gain a Vampire level, you can replace one spell on your list with another Vampire spell for which you have spell slots."
+            ]},
+            { "type" : "div",       "className" : "indent",                     "content" : [
+                { "type" : "span",  "className" : "text-label",                 "content" : "Spellcasting Ability. " },
+                "Charisma is your spellcasting ability for your Vampire spells."
+            ]},
+            { "type" : "div",       "className" : "indent",                     "content" : [
+                { "type" : "span",  "className" : "text-label",                 "content" : "Spellcasting Focus. " },
+                "You can use an Arcane Focus as a Spellcasting Focus for your Vampire spells."
+            ]},
+            { "type" : "div",       "className" : "subheader",                  "content" :  "Veincaller Spellcasting" },
+            { 
+                "type" : "table",     
+                "className" : "table is-striped is-fullwidth", 
+                "content" : [
+                    {
+                        "type" : "thead",
+                        "className" : "class-table-header",
+                        "content" : [
+                            {
+                                "type" : "tr",
+                                "className" : "table-extra-header",
+                                "content" : [
+                                    { "type" : "th" },
+                                    { "type" : "th", "content" : "Spells" },
+                                    { "type" : "th", "content" : "—Spell Slots Per Level—", "attributes" : { "colspan" : 5 } }
+                                ]
+                            },
+                            {
+                                "type" : "tr",
+                                "className" : "table-header",
+                                "content" : [
+                                    { "type" : "th", "content" : "Level" },
+                                    { "type" : "th", "content" : [
+                                        { "type" : "span",  "content" : "Prepared" }
+                                    ]},
+                                    { "type" : "th", "content" : [
+                                        { "type" : "span",  "className" : "desktop",    "content" : "1" },
+                                        { "type" : "span",  "className" : "mobile",     "content" : "1st" }
+                                    ]},
+                                    { "type" : "th", "content" : [
+                                        { "type" : "span",  "className" : "desktop",    "content" : "2" },
+                                        { "type" : "span",  "className" : "mobile",     "content" : "2nd" }
+                                    ]},
+                                    { "type" : "th", "content" : [
+                                        { "type" : "span",  "className" : "desktop",    "content" : "3" },
+                                        { "type" : "span",  "className" : "mobile",     "content" : "3rd" }
+                                    ]},
+                                    { "type" : "th", "content" : [
+                                        { "type" : "span",  "className" : "desktop",    "content" : "4" },
+                                        { "type" : "span",  "className" : "mobile",     "content" : "4th" }
+                                    ]}
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "type" : "tbody",
+                        "content" : [
+                            { "type" : "tr", "content" : [
+                                { "type" : "td", "content" : "3" },
+                                { "type" : "td", "content" : "3" },
+                                { "type" : "td", "content" : "2" },
+                                { "type" : "td", "content" : "—" },
+                                { "type" : "td", "content" : "—" },
+                                { "type" : "td", "content" : "—" }
+                            ]},
+                            { "type" : "tr", "content" : [
+                                { "type" : "td", "content" : "4" },
+                                { "type" : "td", "content" : "4" },
+                                { "type" : "td", "content" : "3" },
+                                { "type" : "td", "content" : "—" },
+                                { "type" : "td", "content" : "—" },
+                                { "type" : "td", "content" : "—" }
+                            ]},
+                            { "type" : "tr", "content" : [
+                                { "type" : "td", "content" : "5" },
+                                { "type" : "td", "content" : "4" },
+                                { "type" : "td", "content" : "3" },
+                                { "type" : "td", "content" : "—" },
+                                { "type" : "td", "content" : "—" },
+                                { "type" : "td", "content" : "—" }
+                            ]},
+                            { "type" : "tr", "content" : [
+                                { "type" : "td", "content" : "6" },
+                                { "type" : "td", "content" : "4" },
+                                { "type" : "td", "content" : "3" },
+                                { "type" : "td", "content" : "—" },
+                                { "type" : "td", "content" : "—" },
+                                { "type" : "td", "content" : "—" }
+                            ]},
+                            { "type" : "tr", "content" : [
+                                { "type" : "td", "content" : "7" },
+                                { "type" : "td", "content" : "5" },
+                                { "type" : "td", "content" : "4" },
+                                { "type" : "td", "content" : "2" },
+                                { "type" : "td", "content" : "—" },
+                                { "type" : "td", "content" : "—" }
+                            ]},
+                            { "type" : "tr", "content" : [
+                                { "type" : "td", "content" : "8" },
+                                { "type" : "td", "content" : "6" },
+                                { "type" : "td", "content" : "4" },
+                                { "type" : "td", "content" : "2" },
+                                { "type" : "td", "content" : "—" },
+                                { "type" : "td", "content" : "—" }
+                            ]},
+                            { "type" : "tr", "content" : [
+                                { "type" : "td", "content" : "9" },
+                                { "type" : "td", "content" : "6" },
+                                { "type" : "td", "content" : "4" },
+                                { "type" : "td", "content" : "2" },
+                                { "type" : "td", "content" : "—" },
+                                { "type" : "td", "content" : "—" }
+                            ]},
+                            { "type" : "tr", "content" : [
+                                { "type" : "td", "content" : "10" },
+                                { "type" : "td", "content" : "7" },
+                                { "type" : "td", "content" : "4" },
+                                { "type" : "td", "content" : "3" },
+                                { "type" : "td", "content" : "—" },
+                                { "type" : "td", "content" : "—" }
+                            ]},
+                            { "type" : "tr", "content" : [
+                                { "type" : "td", "content" : "11" },
+                                { "type" : "td", "content" : "8" },
+                                { "type" : "td", "content" : "4" },
+                                { "type" : "td", "content" : "3" },
+                                { "type" : "td", "content" : "—" },
+                                { "type" : "td", "content" : "—" }
+                            ]},
+                            { "type" : "tr", "content" : [
+                                { "type" : "td", "content" : "12" },
+                                { "type" : "td", "content" : "8" },
+                                { "type" : "td", "content" : "4" },
+                                { "type" : "td", "content" : "3" },
+                                { "type" : "td", "content" : "—" },
+                                { "type" : "td", "content" : "—" }
+                            ]},
+                            { "type" : "tr", "content" : [
+                                { "type" : "td", "content" : "13" },
+                                { "type" : "td", "content" : "9" },
+                                { "type" : "td", "content" : "4" },
+                                { "type" : "td", "content" : "3" },
+                                { "type" : "td", "content" : "2" },
+                                { "type" : "td", "content" : "—" }
+                            ]},
+                            { "type" : "tr", "content" : [
+                                { "type" : "td", "content" : "14" },
+                                { "type" : "td", "content" : "10" },
+                                { "type" : "td", "content" : "4" },
+                                { "type" : "td", "content" : "3" },
+                                { "type" : "td", "content" : "2" },
+                                { "type" : "td", "content" : "—" }
+                            ]},
+                            { "type" : "tr", "content" : [
+                                { "type" : "td", "content" : "15" },
+                                { "type" : "td", "content" : "10" },
+                                { "type" : "td", "content" : "4" },
+                                { "type" : "td", "content" : "3" },
+                                { "type" : "td", "content" : "2" },
+                                { "type" : "td", "content" : "—" }
+                            ]},
+                            { "type" : "tr", "content" : [
+                                { "type" : "td", "content" : "16" },
+                                { "type" : "td", "content" : "11" },
+                                { "type" : "td", "content" : "4" },
+                                { "type" : "td", "content" : "3" },
+                                { "type" : "td", "content" : "3" },
+                                { "type" : "td", "content" : "—" }
+                            ]},
+                            { "type" : "tr", "content" : [
+                                { "type" : "td", "content" : "17" },
+                                { "type" : "td", "content" : "11" },
+                                { "type" : "td", "content" : "4" },
+                                { "type" : "td", "content" : "3" },
+                                { "type" : "td", "content" : "3" },
+                                { "type" : "td", "content" : "—" }
+                            ]},
+                            { "type" : "tr", "content" : [
+                                { "type" : "td", "content" : "18" },
+                                { "type" : "td", "content" : "11" },
+                                { "type" : "td", "content" : "4" },
+                                { "type" : "td", "content" : "3" },
+                                { "type" : "td", "content" : "3" },
+                                { "type" : "td", "content" : "—" }
+                            ]},
+                            { "type" : "tr", "content" : [
+                                { "type" : "td", "content" : "19" },
+                                { "type" : "td", "content" : "12" },
+                                { "type" : "td", "content" : "4" },
+                                { "type" : "td", "content" : "3" },
+                                { "type" : "td", "content" : "3" },
+                                { "type" : "td", "content" : "1" }
+                            ]},
+                            { "type" : "tr", "content" : [
+                                { "type" : "td", "content" : "20" },
+                                { "type" : "td", "content" : "13" },
+                                { "type" : "td", "content" : "4" },
+                                { "type" : "td", "content" : "3" },
+                                { "type" : "td", "content" : "3" },
+                                { "type" : "td", "content" : "1" }
+                            ]}
+                        ]
+                    }
+            ]}
+        ]},
+        { "type" : "div",           "className" : "feature-container",    "content" :[
+            { "type" : "div",       "className" : "feature-header",       "content" : "Level 3: Dark Sacrifice" },
+            "Whenever you consume Hit Dice for your Blood Sacrifice feature, you can choose expended spell slots to recover. The spell slots can have a combined level that is equal to or less than the number of Hit Dice consumed."
+        ]},
+        { "type" : "div",           "className" : "feature-container",    "content" :[
+            { "type" : "div",       "className" : "feature-header",       "content" : "Level 7: War Magic" },
+            "When you take the Attack action on your turn, you can replace one of the attacks with a casting of one of your Veincaller cantrips that has a casting time of an action."
+        ]},
+        { "type" : "div",           "className" : "feature-container",    "content" :[
+            { "type" : "div",       "className" : "feature-header",       "content" : "Level 11: Call of Blood" },
+            "Once per turn, when you damage a creature that has blood with a Veincaller cantrip, you can drain 1 Hit Die from it."
+        ]},
+        { "type" : "div",           "className" : "feature-container",    "content" :[
+            { "type" : "div",       "className" : "feature-header",       "content" : "Level 17: Scarlet Siphon" },
+            "As a Magic Action on your turn, each creature of your choice that has blood within 60 feet of you must make a Constitution saving throw against your spell save DC. You drain 1 Hit Die from each creature that fails, and those creatures gain 1 level of Exhaustion.",
+            { "type" : "div",       "className" : "indent",                     "content" : "You must finish a Long Rest before you can use this feature again." }
+        ]}
+    ]},
+    "gallery" : [
+        { 
+            "credit" : "The Blood Witch by Calder Moore", 
+            "src": "/public/assets/images/veincaller-moore.jpg", 
+            "href": "https://www.artstation.com/caldermoore"
+        }
+    ]
+}

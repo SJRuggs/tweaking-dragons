@@ -1,5 +1,5 @@
 /* TYPOGRAPHY */
-.header, .size-5, .subheader, .size-4, .class-feature-header, .size-3, .class-features-header, .class-table-title, .size-2, .size-1, .titleHeader {
+.header, .size-5, .subheader, .size-4, .feature-header, .size-3, .features-header, .class-table-title, .size-2, .size-1, .titleHeader {
   font-weight: bold;
   padding-top: 0.5rem;
 }
@@ -12,11 +12,11 @@
   font-size: 2.5rem;
 }
 
-.size-3, .class-features-header, .class-table-title {
+.size-3, .features-header, .class-table-title {
   font-size: 2rem;
 }
 
-.size-4, .class-feature-header {
+.size-4, .feature-header {
   font-size: 1.5rem;
 }
 
@@ -25,21 +25,16 @@
 }
 
 /* TABLES */
-.class-table-level,
-.class-table-proficiency-bonus,
-.class-table-resource {
+th, td {
   text-align: center !important;
   white-space: nowrap !important;
   width: 1% !important;
+  padding: 0.25rem 0.5rem !important;
 }
 
 .class-table-features {
   text-align: left !important;
   width: auto !important;
-}
-
-th, td {
-  padding: 0.25rem 0.5rem !important;
 }
 
 .class-table-body > tr {
@@ -56,15 +51,15 @@ th, td {
 }
 
 /* HEADERS */
-.class-feature-container {
+.feature-container {
   margin-top: 2rem;
 }
 
-.class-feature-header {
+.feature-header {
   padding-top: 0;
 }
 
-.class-features-header {
+.features-header {
   margin-bottom: 0.25rem;
 }
 
@@ -266,9 +261,6 @@ footer {
   .mobile-column {
     flex-direction: column !important;
   }
-  .core-table-left {
-    white-space: normal !important;
-  }
   .padded-container {
     padding: 1rem 0 !important;
   }
@@ -287,10 +279,10 @@ footer {
   .size-2 {
     font-size: 1.3rem;
   }
-  .size-3, .class-table-title, .class-features-header {
+  .size-3, .class-table-title, .features-header {
     font-size: 1.2rem;
   }
-  .size-4, .class-feature-header {
+  .size-4, .feature-header {
     font-size: 1.1rem;
   }
   .size-5, .subheader {

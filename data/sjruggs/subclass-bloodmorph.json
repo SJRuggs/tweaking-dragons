@@ -14,10 +14,10 @@
     ],
     "features" : { "type" : "div",  "id" : "bloodmorph-features",               "content" : [
         { "type" : "h1",            "className" : "titleHeader",                "content" : "Bloodmorph" },
-        { "type" : "p",             "content" : "Bloodmorphs, the most monstrous and vicious type of Vampire, are capable of using blood to transform their physical shape beyond a simple polymorph like a bat or a wolf—but into a monstrosity unlike any other." },
-        { "type" : "div",           "className" : "class-feature-container",    "content" :[
-            { "type" : "div",       "className" : "class-feature-header",       "content" : "Level 3: Monstrous Form" },
-            { "type" : "p",                                                     "content" : "As a Bonus Action on your turn, you can consume 1 Hit Die to transform into a vampiric beast for 1 hour. You determine the appearance of this form. You can speak, use equipment, and wear armor while in this form, and can revert to your normal form as a Bonus Action. You automatically revert to your normal form if you fall unconscious or die." },
+        "Bloodmorphs, the most monstrous and vicious type of Vampire, are capable of using blood to transform their physical shape beyond a simple polymorph like a bat or a wolf—but into a monstrosity unlike any other.",
+        { "type" : "div",           "className" : "feature-container",    "content" :[
+            { "type" : "div",       "className" : "feature-header",       "content" : "Level 3: Monstrous Form" },
+            "As a Bonus Action on your turn, you can consume 1 Hit Die to transform into a vampiric beast for 1 hour. You determine the appearance of this form. You can speak, use equipment, and wear armor while in this form, and can revert to your normal form as a Bonus Action. You automatically revert to your normal form if you fall unconscious or die.",
             { "type" : "div",       "className" : "indent",                     "content" : "While you are transformed, you gain the following features:" },
             { "type" : "div",       "className" : "indent",                     "content" : [
                 { "type" : "span",  "className" : "text-label",                 "content" : "Vampiric Might. " },
@@ -35,27 +35,27 @@
             { "type" : "div",       "className" : "indent",                     "content" : "If you have your Extra Attack feature, you can choose whether to use it for this frenzied attack. If one or more creatures are equally near you, roll randomly to determine your target."},
             { "type" : "div",       "className" : "indent",                     "content" : "Once you use your Feed feature, you regain control of yourself."}
         ]},
-        { "type" : "div",           "className" : "class-feature-container",    "content" :[
-            { "type" : "div",       "className" : "class-feature-header",       "content" : "Level 7: Stalker's Prowess" },
+        { "type" : "div",           "className" : "feature-container",    "content" :[
+            { "type" : "div",       "className" : "feature-header",       "content" : "Level 7: Stalker's Prowess" },
             "Your Speed increases by 10 feet, and you add 10 feet to your Long Jump distance and 3 feet to your High Jump distance. Your monstrous form also gains the following additional benefit.",
             { "type" : "div",       "className" : "indent",                     "content" : [
                 { "type" : "span",  "className" : "text-label",                 "content" : "Bloodbound Strikes. " },
                 "Whenever you hit a creature with an Unarmed Strike, you may consume and roll 1 Hit Die (add your Constitution modifier) and deal additional Necrotic damage to the target equal to the result."
             ]}
         ]},
-        { "type" : "div",           "className" : "class-feature-container",    "content" :[
-            { "type" : "div",       "className" : "class-feature-header",       "content" : "Level 11: Drink Deep" },
+        { "type" : "div",           "className" : "feature-container",    "content" :[
+            { "type" : "div",       "className" : "feature-header",       "content" : "Level 11: Drink Deep" },
             "Whenever you drain Hit Dice while in your monstrous form, you drain an additional Hit Die."
         ]},
-        { "type" : "div",           "className" : "class-feature-container",    "content" :[
-            { "type" : "div",       "className" : "class-feature-header",       "content" : "Level 17: Two Extra Attacks" },
+        { "type" : "div",           "className" : "feature-container",    "content" :[
+            { "type" : "div",       "className" : "feature-header",       "content" : "Level 17: Two Extra Attacks" },
             "You can attack three times instead of once whenever you take the Attack action on your turn."
         ]}
     ]},
     "gallery" : [
         { 
             "credit" : "Dettlaff: Higher Vampire by Lorenzo Mastroianni", 
-            "src": "/public/assets/images/bloodmorph.jpeg", 
+            "src": "/public/assets/images/bloodmorph.jpg", 
             "href": "https://www.artstation.com/lorenzomastroianni"
         }
     ]

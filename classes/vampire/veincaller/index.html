@@ -3,37 +3,17 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Tweaks</title>
-        <link rel="icon" href="./favicon.ico" type="image/x-icon">
+        <title>Tweaking Dragons</title>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css">
-        <link rel="stylesheet" href="/src/styles/style.css">
-        <link rel="data" href="/data/sjruggs/class-vampire.json" data-id="vampire">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+        <link rel="stylesheet" href="/src/styles/universal-style.css">        
+        <link rel="preload" as="fetch" type="application/json" crossorigin href="/data/sjruggs/class-vampire.json" data-id="vampire">
+        <link rel="preload" as="fetch" type="application/json" crossorigin href="/data/sjruggs/subclass-veincaller.json" data-id="veincaller">
     </head>
     <body id="root">
-
-
-
-
-        Veincaller
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        <div class="generate" gen-type="navbar"></div>
+        <div class="generate" gen-type="subclass" src="veincaller"></div>
+        <div class="generate" gen-type="footer"></div>
     </body>
     <script type="module" src="/src/scripts/utils/contentGenerator.js"></script>
 </html>

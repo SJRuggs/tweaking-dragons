@@ -3,21 +3,16 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Tweaks</title>
+        <title>Tweaking Dragons</title>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
         <link rel="stylesheet" href="/src/styles/universal-style.css">        
-        <link rel="data" href="/data/sjruggs/class-vampire.json" data-id="vampire">
+        <link rel="preload" as="fetch" type="application/json" crossorigin href="/data/sjruggs/class-vampire.json" data-id="vampire">
     </head>
     <body id="root">
         <div class="generate" gen-type="navbar"></div>
         <div class="generate" gen-type="class" src="vampire"></div>
-        <footer class="footer">
-            <div class="content has-text-centered">
-                <strong>Tweaking Dragons</strong> by <a href="https://github.com/sjruggs/tweaking-dragons">SJRuggs</a>
-            </div>
-        </footer>
+        <div class="generate" gen-type="footer"></div>
     </body>
     <script type="module" src="/src/scripts/utils/contentGenerator.js"></script>
 </html>

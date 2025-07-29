@@ -7,18 +7,16 @@
 .size-5 { font-size: 1.25rem;   @extend .header;        }
 
 /* TABLES */
-.class-table-level, 
-.class-table-proficiency-bonus, 
-.class-table-resource {
+th, td {
     text-align: center !important;
     white-space: nowrap !important; 
     width: 1% !important; 
+    padding: 0.25rem 0.5rem !important;
 }
 .class-table-features {
     text-align: left !important;   
     width: auto !important;
 }
-th, td { padding: 0.25rem 0.5rem !important; }
 .class-table-body > tr              { cursor: pointer; }
 .table-extra-header > th            { border-bottom:    0px !important; padding-bottom: 0px !important; }
 .table-extra-header ~ tr > th       { padding-top:      0px !important; }
@@ -26,9 +24,9 @@ th, td { padding: 0.25rem 0.5rem !important; }
 .titleHeader                        { @extend .size-1; }
 
 /* HEADERS */
-.class-feature-container    { margin-top: 2rem; }
-.class-feature-header       { @extend .size-4;  padding-top: 0; }
-.class-features-header      { @extend .size-3;  margin-bottom: 0.25rem; }
+.feature-container    { margin-top: 2rem; }
+.feature-header       { @extend .size-4;  padding-top: 0; }
+.features-header      { @extend .size-3;  margin-bottom: 0.25rem; }
 .subheader                  { @extend .size-5;  padding-top: 2rem; }
 
 /* CONTENT */
@@ -172,7 +170,6 @@ footer {
     body { font-size: 0.75rem !important;}
     .desktop            { display: none; }
     .mobile-column      { flex-direction: column !important; }
-    .core-table-left    { white-space: normal !important; }
     .padded-container   { padding: 1rem 0 !important; }
     .divider-label      { width: 80px; }
     th      { padding: 0.25rem !important; }

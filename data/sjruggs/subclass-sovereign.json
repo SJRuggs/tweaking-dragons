@@ -1,0 +1,75 @@
+{
+    "cssRules" : "inherit:vampire",
+    "menu" : [
+        { "type" : "label",     "content" : "Sovereign" },
+        { "type" : "list",      "content" : [
+            { "type" : "item",  "content" : "Subclass Features",    "goto" : "root" }
+        ]},
+        { "type" : "label",     "content" : "Resources" },
+        { "type" : "list",      "content" : [
+            { "type" : "item",  "content" : "The Vampire",          "href": "/classes/vampire" },
+            { "type" : "item",  "content" : "Sanguine Mutations",   "href": "/classes/vampire/sanguine-mutations" },
+            { "type" : "item",  "content" : "Gallery",              "id" : "sovereign-gallery-button" }
+        ]}
+    ],
+    "features" : { "type" : "div",  "id" : "sovereign-features",               "content" : [
+        { "type" : "h1",            "className" : "titleHeader",                "content" : "Sovereign" },
+        "Sovereign Vampires pride themselves not only on their discretion and secrecy, but their absolute control over the mortal mind. Sovereigns are known to select their victims with great care, feeding on them unto the brink of death before sparing them death—only to bind them to eternal servitude.",
+        { "type" : "div",           "className" : "feature-container",    "content" :[
+            { "type" : "div",       "className" : "feature-header",       "content" : "Level 3: Silver Tongue" },
+            "When you make a Charisma (Persuasion) or Charisma (Deception) check, you can treat a d20 roll of a 9 or lower as a 10."
+        ]},
+        { "type" : "div",           "className" : "feature-container",    "content" :[
+            { "type" : "div",       "className" : "feature-header",       "content" : "Level 3: Willing Tribute" },
+            "Your charming abilities grow beyond the ordinary Vampire's. You gain the following benefits.",
+            { "type" : "div",       "className" : "indent",                     "content" : [
+                { "type" : "span",  "className" : "text-label",                 "content" : "Numbing Bite. " },
+                "You can use your Feed feature on Charmed and Unconscious creatures, even if they aren't grappled."
+            ]},
+            { "type" : "div",       "className" : "indent",                     "content" : [
+                { "type" : "span",  "className" : "text-label",                 "content" : "Dreams of Blood. " },
+                "If damaging a Charmed or Unconscious creature with your Feed feature would end a condition or a effect, the creature makes a Wisdom saving throw instead (DC 8 + your proficiency bonus + your Charisma modifier). On a failure, the condition or effect remains."
+            ]},
+            { "type" : "div",       "className" : "indent",                     "content" : [
+                { "type" : "span",  "className" : "text-label",                 "content" : "Sweet Memories. " },
+                "Unless they succeed against this feature's saving throw, creatures don't remember you drinking their blood or being Charmed by you."
+            ]}
+        ]},
+        { "type" : "div",           "className" : "feature-container",    "content" :[
+            { "type" : "div",       "className" : "feature-header",       "content" : "Level 7: Irresistible Will" },
+            "You can use your Mesmerize feature to cast ",
+            { "type" : "a", "content" : "Command", "attributes" : { "href" : "http://dnd2024.wikidot.com/spell:command", "target" : "_blank" } }, " or ",
+            { "type" : "a", "content" : "Suggestion", "attributes" : { "href" : "http://dnd2024.wikidot.com/spell:suggestion", "target" : "_blank" } },
+            " without material components. When you do, the creature is Charmed by you for the duration of the spell, and the spell does not end early when they complete their task."
+        ]},
+        { "type" : "div",           "className" : "feature-container",    "content" :[
+            { "type" : "div",       "className" : "feature-header",       "content" : "Level 11: Enthrall" },
+            "When you reduce someone to their absolute lowest, you can break their mind and reshape it to your will.",
+            "As a Magic Action on your turn, you can enthrall a Humanoid you touch that has 5 levels of Exhaustion. The creature remains enthralled until ",
+            { "type" : "a", "content" : "Greater Restoration", "attributes" : { "href" : "http://dnd2024.wikidot.com/spell:greater-restoration", "target" : "_blank" } },
+            " is cast on it.",
+            { "type" : "div",       "className" : "indent",                     "content" : "Enthralled creatures are Charmed by you and obey your every command to the best of their ability."}
+        ]},
+        { "type" : "div",           "className" : "feature-container",    "content" :[
+            { "type" : "div",       "className" : "feature-header",       "content" : "Level 17: Devour Thrall" },
+            "When you use your Feed feature on an enthralled creature, continue draining Hit Dice until the creature is dead (creatures die when they have 6 levels of Exhaustion)."
+        ]}
+    ]},
+    "gallery" : [
+        { 
+            "credit" : "Sisters of the Undead by Bastien L. Deharme", 
+            "src": "/public/assets/images/sovereign-deharme.jpg", 
+            "href": "https://www.artstation.com/deharme"
+        },
+        { 
+            "credit" : "Strefan, Maurer Progenitor by Chris Rallis", 
+            "src": "/public/assets/images/sovereign-rallis.jpg", 
+            "href": "https://www.rallisart.com"
+        },
+        { 
+            "credit" : "Henrika Domnathi by Billie Christian", 
+            "src": "/public/assets/images/sovereign-christian.jpg", 
+            "href": "https://www.artstation.com/billcreative"
+        }
+    ]
+}

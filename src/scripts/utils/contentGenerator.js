@@ -40,6 +40,7 @@ async function generateAllContent() {
         element.classList.add(`generated${registry[src] ? `-${src}` : ''}`);
         switch (element.getAttribute('gen-type')) {
             case 'navbar':      generateNavbar(element); break;
+            case 'footer':      generateFooter(element); break;
             case 'class' :      generateClass(src, element); break;
             case 'subclass' :   generateSubclass(src, element); break;
         }
@@ -54,12 +55,23 @@ async function generateAllContent() {
  */
 function generateNavbar(element) {
     const navbarElements = [];
-    registry.navbar.menu[0].content.forEach(item => navbarElements.push(createElement('a', { className: 'navbar-item', href: item.href }, [item.content])));
+    registry.navbar.menu[0].content.forEach(item => navbarElements.push(createElement('a', { className: 'navbar-item', attributes: { href: item.href } }, [item.content])));
     const start =   createElement('div',    { className: 'navbar-start' },      navbarElements);
     const menu =    createElement('div',    { className: 'navbar-menu' },       [start]);
-    const navbar =  createElement('nav',    { className: 'navbar' },    [menu]);
+    const navbar =  createElement('nav',    { className: 'navbar' },            [menu]);
     element.appendChild(navbar);
     updateMenu(registry.navbar.menu);
+}
+
+function generateFooter(element) {
+    element.appendChild(createElement('footer', 
+        { className: 'footer' },
+        [ createElement('div', { className: 'content has-text-centered' }, [
+            createElement('strong', {}, ['Tweaking Dragons']),
+            ' by ',
+            createElement('a', { href: 'https://github.com/sjruggs/tweaking-dragons' }, ['SJRuggs'])
+        ])]
+    ));
 }
 
 /**

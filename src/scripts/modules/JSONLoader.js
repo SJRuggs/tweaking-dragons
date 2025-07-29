@@ -12,8 +12,8 @@ export const fetchJSON = filePath => fetch(filePath)
  * Load DOM linked data sources
  * @param {object} registry - Registry to store loaded data
  */
-export const loadDOMLinkedSources = async registry => {
-    for (const src of document.querySelectorAll('link[rel="data"]')) {
+export async function loadDOMLinkedSources(registry) {
+    for (const src of document.querySelectorAll('[data-id]')) {
         const id = src.getAttribute('data-id');
         registry[id] = await fetchJSON(src.getAttribute('href'));
 
